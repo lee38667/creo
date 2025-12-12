@@ -1,0 +1,55 @@
+# Creo Media Website - .gitignore
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+/.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+*.swp
+*.swo
+*~
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+*.code-workspace
