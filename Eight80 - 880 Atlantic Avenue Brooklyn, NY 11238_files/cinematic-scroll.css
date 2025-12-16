@@ -1,0 +1,193 @@
+/* ========================================
+   Cinematic Scroll Transition Styles
+   ======================================== */
+
+/* Section container - full viewport, will be pinned */
+.cinematic-scroll-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #301911;
+}
+
+/* Inner container - holds all animated elements */
+.cinematic-scroll-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image grid layout */
+.cinematic-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2vw;
+  padding: 5vh 5vw;
+  align-items: center;
+  will-change: transform;
+}
+
+/* Individual image containers */
+.cinematic-image {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform;
+}
+
+.cinematic-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Center image - scales and pans */
+.cinematic-image.center {
+  height: 90vh;
+  z-index: 2;
+}
+
+/* Side images - translate outward */
+.cinematic-image.left {
+  justify-self: end;
+}
+
+.cinematic-image.right {
+  justify-self: start;
+}
+
+/* Next section content - fades and slides in */
+.cinematic-next-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: #fafafa;
+  max-width: 800px;
+  padding: 0 2rem;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.cinematic-next-content h2 {
+  font-family: var(--family--1, "Freight Big Pro", serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cinematic-next-content p {
+  font-family: var(--family--2, "Inter", sans-serif);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Headline that gets pinned */
+.cinematic-heading {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  color: #fafafa;
+  font-family: var(--family--1, "Freight Big Pro", serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  will-change: opacity;
+}
+
+.cinematic-heading br {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .cinematic-images {
+    grid-template-columns: 0.8fr 2fr 0.8fr;
+    gap: 1.5vw;
+    padding: 3vh 3vw;
+  }
+
+  .cinematic-image {
+    height: 70vh;
+  }
+
+  .cinematic-image.center {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinematic-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2vh;
+    padding: 2vh 5vw;
+  }
+
+  .cinematic-image {
+    height: 30vh;
+  }
+
+  .cinematic-image.center {
+    height: 40vh;
+    order: 2;
+  }
+
+  .cinematic-image.left {
+    order: 1;
+  }
+
+  .cinematic-image.right {
+    order: 3;
+  }
+
+  .cinematic-heading {
+    top: 5vh;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .cinematic-next-content h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+
+/* Performance optimizations */
+.cinematic-scroll-section * {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU acceleration hints */
+.cinematic-image,
+.cinematic-next-content,
+.cinematic-heading {
+  transform: translateZ(0);
+}

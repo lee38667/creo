@@ -1,0 +1,3148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://eight80bk.kinsta.cloud/ -->
+<html
+  class="js swup-enabled has-loaded is-stopped-top has-reduced-motion"
+  lang="en-US"
+  style="--ivh: 6.07px; --vw: 13.51px"
+>
+  <script
+    src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js"
+    id="eppiocemhmnlbhjplcgkofciiegomcon"
+  ></script>
+  <script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script>
+  <script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style data-swup-theme="">
+      html {
+        --swup-overlay-theme-color: #2d2e82;
+        --swup-overlay-theme-duration: 0.6s;
+        --swup-overlay-theme-delay: 0.2s;
+        --swup-overlay-theme-scale: 1.2;
+        --swup-overlay-theme-skew: 5deg;
+      }
+      .swup-transition-overlay {
+        --swup-overlay-x-scale: 1;
+        --swup-overlay-y-scale: 1;
+        --swup-overlay-skew-direction: 1;
+        --swup-overlay-width-value: calc(100vw * var(--swup-overlay-x-scale));
+        --swup-overlay-height-value: calc(100vh * var(--swup-overlay-y-scale));
+        --swup-overlay-transform-x-value: calc(
+          100% * var(--swup-overlay-x-scale)
+        );
+        --swup-overlay-transform-y-value: calc(
+          100% * var(--swup-overlay-y-scale)
+        );
+        --swup-overlay-top-value: calc(
+          (1 - var(--swup-overlay-y-scale)) * 0.5 * 100vh
+        );
+        --swup-overlay-left-value: calc(
+          (1 - var(--swup-overlay-x-scale)) * 0.5 * 100vw
+        );
+        --swup-overlay-bottom-value: auto;
+        --swup-overlay-right-value: auto;
+        --swup-overlay-skew-value: calc(
+          var(--swup-overlay-theme-skew) * var(--swup-overlay-skew-direction)
+        );
+        background-color: var(--swup-overlay-theme-color);
+        bottom: var(--swup-overlay-bottom-value);
+        height: var(--swup-overlay-height-value);
+        left: var(--swup-overlay-left-value);
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        right: var(--swup-overlay-right-value);
+        top: var(--swup-overlay-top-value);
+        width: var(--swup-overlay-width-value);
+        z-index: 9999;
+      }
+      html.is-changing .swup-transition-overlay {
+        opacity: 1;
+        transition: transform var(--swup-overlay-theme-duration)
+          var(--swup-overlay-theme-delay);
+      }
+      .swup-transition-overlay[data-direction="to-left"],
+      .swup-transition-overlay[data-direction="to-right"] {
+        --swup-overlay-x-scale: var(--swup-overlay-theme-scale);
+      }
+      .swup-transition-overlay[data-direction="to-right"] {
+        transform: translate3d(
+            calc(var(--swup-overlay-transform-x-value) * -1),
+            0,
+            0
+          )
+          skewX(var(--swup-overlay-skew-value));
+      }
+      html.is-animating .swup-transition-overlay[data-direction="to-right"] {
+        transform: translateZ(0) skewX(var(--swup-overlay-skew-value));
+      }
+      .swup-transition-overlay[data-direction="to-left"],
+      html.is-rendering .swup-transition-overlay[data-direction="to-right"] {
+        transform: translate3d(var(--swup-overlay-transform-x-value), 0, 0)
+          skewX(var(--swup-overlay-skew-value));
+      }
+      .swup-transition-overlay[data-direction="to-left"] {
+        --swup-overlay-skew-direction: -1;
+      }
+      html.is-animating .swup-transition-overlay[data-direction="to-left"] {
+        transform: translateZ(0) skewX(var(--swup-overlay-skew-value));
+      }
+      html.is-rendering .swup-transition-overlay[data-direction="to-left"] {
+        transform: translate3d(
+            calc(var(--swup-overlay-transform-x-value) * -1),
+            0,
+            0
+          )
+          skewX(var(--swup-overlay-skew-value));
+      }
+      .swup-transition-overlay[data-direction="to-bottom"],
+      .swup-transition-overlay[data-direction="to-top"] {
+        --swup-overlay-y-scale: var(--swup-overlay-theme-scale);
+      }
+      .swup-transition-overlay[data-direction="to-bottom"] {
+        transform: translate3d(
+            0,
+            calc(var(--swup-overlay-transform-y-value) * -1),
+            0
+          )
+          skewY(var(--swup-overlay-skew-value));
+      }
+      html.is-animating .swup-transition-overlay[data-direction="to-bottom"] {
+        transform: translateZ(0) skewY(var(--swup-overlay-skew-value));
+      }
+      .swup-transition-overlay[data-direction="to-top"],
+      html.is-rendering .swup-transition-overlay[data-direction="to-bottom"] {
+        transform: translate3d(0, var(--swup-overlay-transform-y-value), 0)
+          skewY(var(--swup-overlay-skew-value));
+      }
+      .swup-transition-overlay[data-direction="to-top"] {
+        --swup-overlay-skew-direction: -1;
+      }
+      html.is-animating .swup-transition-overlay[data-direction="to-top"] {
+        transform: translateZ(0) skewY(var(--swup-overlay-skew-value));
+      }
+      html.is-rendering .swup-transition-overlay[data-direction="to-top"] {
+        transform: translate3d(
+            0,
+            calc(var(--swup-overlay-transform-y-value) * -1),
+            0
+          )
+          skewY(var(--swup-overlay-skew-value));
+      }
+    </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2"
+    />
+
+    <title>Creo Media</title>
+
+    <link rel="pingback" href="https://eight80bk.kinsta.cloud/xmlrpc.php" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="application-name" content="Eight80" />
+
+    <!-- Minimal viewport script -->
+    <script>
+      (function () {
+        // Set initial viewport height only once, using window.innerHeight for Safari-like behavior
+        const ivh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--ivh", `${ivh}px`);
+      })();
+    </script>
+
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      img:is([sizes="auto" i], [sizes^="auto," i]) {
+        contain-intrinsic-size: 3000px 1500px;
+      }
+    </style>
+    <style id="critical-css">
+      .c-preloader[data-cid]{align-items:center;background:#301911;bottom:0;display:flex;height:100%;height:100dvh;height:calc(var(--vh)*100);justify-content:center;left:0;opacity:1;overflow:hidden;position:fixed;right:0;text-align:center;top:0;transition-delay:0s;transition-duration:.8s;transition-property:clip-path,opacity,visibility;transition-timing-function:cubic-bezier(.78,0,.22,1);visibility:visible;width:100%;z-index:100;.preloader_logo{aspect-ratio:400/293;margin:auto;max-width:200px;position:relative;text-align:center;vertical-align:middle;width:100%}.logo_src{height:100%;left:0;position:absolute;top:0;width:100%}@media (min-width:769px){.preloader_logo{max-width:400px}}@supports (clip-path:polygon(0 0)){clip-path:polygon(0 0,0 100%,50% 100%,50% 50%,50% 50%,50% 50%,50% 50%,50% 100%,100% 100%,100% 0);opacity:1;pointer-events:none;visibility:visible}}.c-preloader[data-cid].is-hidden{opacity:0;visibility:hidden;@supports (clip-path:polygon(0 0)){clip-path:polygon(0 0,0 100%,0 100%,0 0,100% 0,100% 100%,0 100%,0 100%,100% 100%,100% 0);opacity:1;visibility:visible}}.js-split-animation,[data-split-animation]{max-width:none!important;word-wrap:break-word;&amp;&gt;p{max-width:none!important;word-wrap:break-word}}@media (prefers-reduced-motion:no-preference) and (min-width:1025px) and (hover:hover) and (pointer:fine){.js-split-animation .word,[data-split-animation] .word{display:inline-block;max-width:none!important;opacity:0;position:relative;translate:translateY(20%);width:auto!important;will-change:opacity,transform}}html.is-animating,html.is-loading{cursor:progress}
+    </style>
+    <script>
+      document.documentElement.className =
+        document.documentElement.className.replace("no-js", "js");
+    </script>
+    <!-- The SEO Framework by Sybre Waaijer -->
+    <link rel="canonical" href="eight80bk.kinsta.cloud.html" />
+    <meta name="theme-color" content="#93897b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Eight80" />
+    <meta property="og:title" content="Eight80" />
+    <meta property="og:url" content="eight80bk.kinsta.cloud.html" />
+    <meta
+      property="og:image"
+      content="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/eight80-brooklyn.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eight80" />
+    <meta
+      name="twitter:image"
+      content="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/eight80-brooklyn.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://eight80bk.kinsta.cloud/#/schema/WebSite",
+            "url": "eight80bk.kinsta.cloud.html",
+            "name": "Eight80",
+            "description": "880 Atlantic Avenue Brooklyn, NY 11238",
+            "inLanguage": "en-US",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://eight80bk.kinsta.cloud/search/{search_term_string}/"
+              },
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@id": "https://eight80bk.kinsta.cloud/#/schema/Organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "eight80bk.kinsta.cloud.html",
+            "url": "eight80bk.kinsta.cloud.html",
+            "name": "Eight80 &#x2d; 880 Atlantic Avenue Brooklyn, NY 11238",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://eight80bk.kinsta.cloud/#/schema/WebSite"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "@id": "https://eight80bk.kinsta.cloud/#/schema/BreadcrumbList",
+              "itemListElement": {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Eight80"
+              }
+            },
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "eight80bk.kinsta.cloud.html"
+            },
+            "about": {
+              "@id": "https://eight80bk.kinsta.cloud/#/schema/Organization"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://eight80bk.kinsta.cloud/#/schema/Organization",
+            "name": "Eight80",
+            "url": "eight80bk.kinsta.cloud.html",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon.jpg",
+              "contentUrl": "https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon.jpg",
+              "width": 512,
+              "height": 512,
+              "contentSize": "12142"
+            }
+          }
+        ]
+      }
+    </script>
+    <!-- / The SEO Framework by Sybre Waaijer | 2.84ms meta | 0.59ms boot -->
+
+    <link rel="dns-prefetch" href="https://use.typekit.net/" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://use.typekit.net/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Serif:wght@400&family=Open+Sans:wght@400;600&display=swap" />
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/style.min.css"
+      type="text/css"
+      media="all"
+    />
+    <style id="wp-block-library-theme-inline-css" type="text/css">
+      .wp-block-audio :where(figcaption) {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme .wp-block-audio :where(figcaption) {
+        color: #ffffffa6;
+      }
+      .wp-block-audio {
+        margin: 0 0 1em;
+      }
+      .wp-block-code {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: Menlo, Consolas, monaco, monospace;
+        padding: 0.8em 1em;
+      }
+      .wp-block-embed :where(figcaption) {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme .wp-block-embed :where(figcaption) {
+        color: #ffffffa6;
+      }
+      .wp-block-embed {
+        margin: 0 0 1em;
+      }
+      .blocks-gallery-caption {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme .blocks-gallery-caption {
+        color: #ffffffa6;
+      }
+      :root :where(.wp-block-image figcaption) {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme :root :where(.wp-block-image figcaption) {
+        color: #ffffffa6;
+      }
+      .wp-block-image {
+        margin: 0 0 1em;
+      }
+      .wp-block-pullquote {
+        border-bottom: 4px solid;
+        border-top: 4px solid;
+        color: currentColor;
+        margin-bottom: 1.75em;
+      }
+      .wp-block-pullquote cite,
+      .wp-block-pullquote footer,
+      .wp-block-pullquote__citation {
+        color: currentColor;
+        font-size: 0.8125em;
+        font-style: normal;
+        text-transform: uppercase;
+      }
+      .wp-block-quote {
+        border-left: 0.25em solid;
+        margin: 0 0 1.75em;
+        padding-left: 1em;
+      }
+      .wp-block-quote cite,
+      .wp-block-quote footer {
+        color: currentColor;
+        font-size: 0.8125em;
+        font-style: normal;
+        position: relative;
+      }
+      .wp-block-quote:where(.has-text-align-right) {
+        border-left: none;
+        border-right: 0.25em solid;
+        padding-left: 0;
+        padding-right: 1em;
+      }
+      .wp-block-quote:where(.has-text-align-center) {
+        border: none;
+        padding-left: 0;
+      }
+      .wp-block-quote.is-large,
+      .wp-block-quote.is-style-large,
+      .wp-block-quote:where(.is-style-plain) {
+        border: none;
+      }
+      .wp-block-search .wp-block-search__label {
+        font-weight: 700;
+      }
+      .wp-block-search__button {
+        border: 1px solid #ccc;
+        padding: 0.375em 0.625em;
+      }
+      :where(.wp-block-group.has-background) {
+        padding: 1.25em 2.375em;
+      }
+      .wp-block-separator.has-css-opacity {
+        opacity: 0.4;
+      }
+      .wp-block-separator {
+        border: none;
+        border-bottom: 2px solid;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .wp-block-separator.has-alpha-channel-opacity {
+        opacity: 1;
+      }
+      .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+        width: 100px;
+      }
+      .wp-block-separator.has-background:not(.is-style-dots) {
+        border-bottom: none;
+        height: 1px;
+      }
+      .wp-block-separator.has-background:not(.is-style-wide):not(
+          .is-style-dots
+        ) {
+        height: 2px;
+      }
+      .wp-block-table {
+        margin: 0 0 1em;
+      }
+      .wp-block-table td,
+      .wp-block-table th {
+        word-break: normal;
+      }
+      .wp-block-table :where(figcaption) {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme .wp-block-table :where(figcaption) {
+        color: #ffffffa6;
+      }
+      .wp-block-video :where(figcaption) {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+      }
+      .is-dark-theme .wp-block-video :where(figcaption) {
+        color: #ffffffa6;
+      }
+      .wp-block-video {
+        margin: 0 0 1em;
+      }
+      :root :where(.wp-block-template-part.has-background) {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 1.25em 2.375em;
+      }
+    </style>
+    <style id="global-styles-inline-css" type="text/css">
+      :root {
+        --wp--preset--aspect-ratio--square: 1;
+        --wp--preset--aspect-ratio--4-3: 4/3;
+        --wp--preset--aspect-ratio--3-4: 3/4;
+        --wp--preset--aspect-ratio--3-2: 3/2;
+        --wp--preset--aspect-ratio--2-3: 2/3;
+        --wp--preset--aspect-ratio--16-9: 16/9;
+        --wp--preset--aspect-ratio--9-16: 9/16;
+        --wp--preset--color--black: #000000;
+        --wp--preset--color--cyan-bluish-gray: #abb8c3;
+        --wp--preset--color--white: #ffffff;
+        --wp--preset--color--pale-pink: #f78da7;
+        --wp--preset--color--vivid-red: #cf2e2e;
+        --wp--preset--color--luminous-vivid-orange: #ff6900;
+        --wp--preset--color--luminous-vivid-amber: #fcb900;
+        --wp--preset--color--light-green-cyan: #7bdcb5;
+        --wp--preset--color--vivid-green-cyan: #00d084;
+        --wp--preset--color--pale-cyan-blue: #8ed1fc;
+        --wp--preset--color--vivid-cyan-blue: #0693e3;
+        --wp--preset--color--vivid-purple: #9b51e0;
+        --wp--preset--color--light: #fafafa;
+        --wp--preset--color--dark: #301911;
+        --wp--preset--color--primary-1: #93897b;
+        --wp--preset--color--primary-2: #7c2023;
+        --wp--preset--color--neutral-1: #d5d1c8;
+        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+          135deg,
+          rgba(6, 147, 227, 1) 0%,
+          rgb(155, 81, 224) 100%
+        );
+        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+          135deg,
+          rgb(122, 220, 180) 0%,
+          rgb(0, 208, 130) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+          135deg,
+          rgba(252, 185, 0, 1) 0%,
+          rgba(255, 105, 0, 1) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+          135deg,
+          rgba(255, 105, 0, 1) 0%,
+          rgb(207, 46, 46) 100%
+        );
+        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+          135deg,
+          rgb(238, 238, 238) 0%,
+          rgb(169, 184, 195) 100%
+        );
+        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(
+          135deg,
+          rgb(74, 234, 220) 0%,
+          rgb(151, 120, 209) 20%,
+          rgb(207, 42, 186) 40%,
+          rgb(238, 44, 130) 60%,
+          rgb(251, 105, 98) 80%,
+          rgb(254, 248, 76) 100%
+        );
+        --wp--preset--gradient--blush-light-purple: linear-gradient(
+          135deg,
+          rgb(255, 206, 236) 0%,
+          rgb(152, 150, 240) 100%
+        );
+        --wp--preset--gradient--blush-bordeaux: linear-gradient(
+          135deg,
+          rgb(254, 205, 165) 0%,
+          rgb(254, 45, 45) 50%,
+          rgb(107, 0, 62) 100%
+        );
+        --wp--preset--gradient--luminous-dusk: linear-gradient(
+          135deg,
+          rgb(255, 203, 112) 0%,
+          rgb(199, 81, 192) 50%,
+          rgb(65, 88, 208) 100%
+        );
+        --wp--preset--gradient--pale-ocean: linear-gradient(
+          135deg,
+          rgb(255, 245, 203) 0%,
+          rgb(182, 227, 212) 50%,
+          rgb(51, 167, 181) 100%
+        );
+        --wp--preset--gradient--electric-grass: linear-gradient(
+          135deg,
+          rgb(202, 248, 128) 0%,
+          rgb(113, 206, 126) 100%
+        );
+        --wp--preset--gradient--midnight: linear-gradient(
+          135deg,
+          rgb(2, 3, 129) 0%,
+          rgb(40, 116, 252) 100%
+        );
+        --wp--preset--gradient--primary-to-secondary: linear-gradient(
+          135deg,
+          var(--wp--preset--color--primary-1) 0%,
+          var(--wp--preset--color--primary-2) 100%
+        );
+        --wp--preset--font-size--small: 14px;
+        --wp--preset--font-size--medium: var(--base--font-size);
+        --wp--preset--font-size--large: clamp(
+          18px,
+          1.125rem + ((1vw - 3.2px) * 0.313),
+          22px
+        );
+        --wp--preset--font-size--x-large: clamp(
+          28px,
+          1.75rem + ((1vw - 3.2px) * 0.313),
+          32px
+        );
+        --wp--preset--font-size--xx-large: clamp(
+          42px,
+          2.625rem + ((1vw - 3.2px) * 1.25),
+          58px
+        );
+        --wp--preset--font-family--freight-big-pro: var(--family--1);
+        --wp--preset--font-family--inter: var(--family--2);
+        --wp--preset--spacing--20: 0.44rem;
+        --wp--preset--spacing--30: 0.67rem;
+        --wp--preset--spacing--40: 1rem;
+        --wp--preset--spacing--50: 1.5rem;
+        --wp--preset--spacing--60: 2.25rem;
+        --wp--preset--spacing--70: 3.38rem;
+        --wp--preset--spacing--80: 5.06rem;
+        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1),
+          6px 6px rgba(0, 0, 0, 1);
+        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+      }
+      :root {
+        --wp--style--global--content-size: var(--container-max-width-1);
+        --wp--style--global--wide-size: var(--container-max-width-1);
+      }
+      :where(body) {
+        margin: 0;
+      }
+      .wp-site-blocks {
+        padding-top: var(--wp--style--root--padding-top);
+        padding-bottom: var(--wp--style--root--padding-bottom);
+      }
+      .has-global-padding {
+        padding-right: var(--wp--style--root--padding-right);
+        padding-left: var(--wp--style--root--padding-left);
+      }
+      .has-global-padding > .alignfull {
+        margin-right: calc(var(--wp--style--root--padding-right) * -1);
+        margin-left: calc(var(--wp--style--root--padding-left) * -1);
+      }
+      .has-global-padding
+        :where(
+          :not(.alignfull.is-layout-flow)
+            > .has-global-padding:not(.wp-block-block, .alignfull)
+        ) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      .has-global-padding
+        :where(
+          :not(.alignfull.is-layout-flow)
+            > .has-global-padding:not(.wp-block-block, .alignfull)
+        )
+        > .alignfull {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .wp-site-blocks > .alignleft {
+        float: left;
+        margin-right: 2em;
+      }
+      .wp-site-blocks > .alignright {
+        float: right;
+        margin-left: 2em;
+      }
+      .wp-site-blocks > .aligncenter {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      :where(.wp-site-blocks) > * {
+        margin-block-start: 24px;
+        margin-block-end: 0;
+      }
+      :where(.wp-site-blocks) > :first-child {
+        margin-block-start: 0;
+      }
+      :where(.wp-site-blocks) > :last-child {
+        margin-block-end: 0;
+      }
+      :root {
+        --wp--style--block-gap: 24px;
+      }
+      :root :where(.is-layout-flow) > :first-child {
+        margin-block-start: 0;
+      }
+      :root :where(.is-layout-flow) > :last-child {
+        margin-block-end: 0;
+      }
+      :root :where(.is-layout-flow) > * {
+        margin-block-start: 24px;
+        margin-block-end: 0;
+      }
+      :root :where(.is-layout-constrained) > :first-child {
+        margin-block-start: 0;
+      }
+      :root :where(.is-layout-constrained) > :last-child {
+        margin-block-end: 0;
+      }
+      :root :where(.is-layout-constrained) > * {
+        margin-block-start: 24px;
+        margin-block-end: 0;
+      }
+      :root :where(.is-layout-flex) {
+        gap: 24px;
+      }
+      :root :where(.is-layout-grid) {
+        gap: 24px;
+      }
+      .is-layout-flow > .alignleft {
+        float: left;
+        margin-inline-start: 0;
+        margin-inline-end: 2em;
+      }
+      .is-layout-flow > .alignright {
+        float: right;
+        margin-inline-start: 2em;
+        margin-inline-end: 0;
+      }
+      .is-layout-flow > .aligncenter {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .is-layout-constrained > .alignleft {
+        float: left;
+        margin-inline-start: 0;
+        margin-inline-end: 2em;
+      }
+      .is-layout-constrained > .alignright {
+        float: right;
+        margin-inline-start: 2em;
+        margin-inline-end: 0;
+      }
+      .is-layout-constrained > .aligncenter {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .is-layout-constrained
+        > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+        max-width: var(--wp--style--global--content-size);
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .is-layout-constrained > .alignwide {
+        max-width: var(--wp--style--global--wide-size);
+      }
+      body .is-layout-flex {
+        display: flex;
+      }
+      .is-layout-flex {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .is-layout-flex > :is(*, div) {
+        margin: 0;
+      }
+      body .is-layout-grid {
+        display: grid;
+      }
+      .is-layout-grid > :is(*, div) {
+        margin: 0;
+      }
+      body {
+        background-color: var(--base--background-color);
+        color: var(--base--text-color);
+        font-family: 'Open Sans', sans-serif;
+        font-size: var(--base--font-size);
+        font-style: normal;
+        font-weight: var(--base--font-weight);
+        letter-spacing: 0;
+        line-height: var(--base--line-height);
+        --wp--style--root--padding-top: 0px;
+        --wp--style--root--padding-right: 0px;
+        --wp--style--root--padding-bottom: 0px;
+        --wp--style--root--padding-left: 0px;
+      }
+      a:where(:not(.wp-element-button)) {
+        color: inherit;
+        text-decoration: none;
+      }
+      :root :where(a:where(:not(.wp-element-button)):hover) {
+        text-decoration: none;
+      }
+      :root :where(a:where(:not(.wp-element-button)):focus) {
+        text-decoration: none;
+      }
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      h2 {
+        font-family: 'PT Serif', serif;
+        font-weight: 400;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      h4 {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+      h5 {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+      :root :where(.wp-element-button, .wp-block-button__link) {
+        background-color: transparent;
+        border-radius: 0;
+        border-width: 0;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: var(--base--line-height);
+        padding: calc(0.667em + 2px) calc(1.333em + 2px);
+        text-decoration: none;
+      }
+      :root :where(.wp-element-button:hover, .wp-block-button__link:hover) {
+        background-color: transparent;
+        color: inherit;
+      }
+      :root :where(.wp-element-button:focus, .wp-block-button__link:focus) {
+        background-color: transparent;
+        color: inherit;
+      }
+      .has-black-color {
+        color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-color {
+        color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-color {
+        color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-color {
+        color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-color {
+        color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-color {
+        color: var(--wp--preset--color--luminous-vivid-orange) !important;
+      }
+      .has-luminous-vivid-amber-color {
+        color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-color {
+        color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-color {
+        color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-color {
+        color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-color {
+        color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-color {
+        color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-light-color {
+        color: var(--wp--preset--color--light) !important;
+      }
+      .has-dark-color {
+        color: var(--wp--preset--color--dark) !important;
+      }
+      .has-primary-1-color {
+        color: var(--wp--preset--color--primary-1) !important;
+      }
+      .has-primary-2-color {
+        color: var(--wp--preset--color--primary-2) !important;
+      }
+      .has-neutral-1-color {
+        color: var(--wp--preset--color--neutral-1) !important;
+      }
+      .has-black-background-color {
+        background-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-background-color {
+        background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-background-color {
+        background-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-background-color {
+        background-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-background-color {
+        background-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-amber
+        ) !important;
+      }
+      .has-light-green-cyan-background-color {
+        background-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-background-color {
+        background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-background-color {
+        background-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-light-background-color {
+        background-color: var(--wp--preset--color--light) !important;
+      }
+      .has-dark-background-color {
+        background-color: var(--wp--preset--color--dark) !important;
+      }
+      .has-primary-1-background-color {
+        background-color: var(--wp--preset--color--primary-1) !important;
+      }
+      .has-primary-2-background-color {
+        background-color: var(--wp--preset--color--primary-2) !important;
+      }
+      .has-neutral-1-background-color {
+        background-color: var(--wp--preset--color--neutral-1) !important;
+      }
+      .has-black-border-color {
+        border-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-border-color {
+        border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-border-color {
+        border-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-border-color {
+        border-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-border-color {
+        border-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-border-color {
+        border-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-border-color {
+        border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-border-color {
+        border-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-border-color {
+        border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-border-color {
+        border-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-light-border-color {
+        border-color: var(--wp--preset--color--light) !important;
+      }
+      .has-dark-border-color {
+        border-color: var(--wp--preset--color--dark) !important;
+      }
+      .has-primary-1-border-color {
+        border-color: var(--wp--preset--color--primary-1) !important;
+      }
+      .has-primary-2-border-color {
+        border-color: var(--wp--preset--color--primary-2) !important;
+      }
+      .has-neutral-1-border-color {
+        border-color: var(--wp--preset--color--neutral-1) !important;
+      }
+      .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+        background: var(
+          --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple
+        ) !important;
+      }
+      .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+        background: var(
+          --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan
+        ) !important;
+      }
+      .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-orange-to-vivid-red
+        ) !important;
+      }
+      .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+        background: var(
+          --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray
+        ) !important;
+      }
+      .has-cool-to-warm-spectrum-gradient-background {
+        background: var(
+          --wp--preset--gradient--cool-to-warm-spectrum
+        ) !important;
+      }
+      .has-blush-light-purple-gradient-background {
+        background: var(--wp--preset--gradient--blush-light-purple) !important;
+      }
+      .has-blush-bordeaux-gradient-background {
+        background: var(--wp--preset--gradient--blush-bordeaux) !important;
+      }
+      .has-luminous-dusk-gradient-background {
+        background: var(--wp--preset--gradient--luminous-dusk) !important;
+      }
+      .has-pale-ocean-gradient-background {
+        background: var(--wp--preset--gradient--pale-ocean) !important;
+      }
+      .has-electric-grass-gradient-background {
+        background: var(--wp--preset--gradient--electric-grass) !important;
+      }
+      .has-midnight-gradient-background {
+        background: var(--wp--preset--gradient--midnight) !important;
+      }
+      .has-primary-to-secondary-gradient-background {
+        background: var(
+          --wp--preset--gradient--primary-to-secondary
+        ) !important;
+      }
+      .has-small-font-size {
+        font-size: var(--wp--preset--font-size--small) !important;
+      }
+      .has-medium-font-size {
+        font-size: var(--wp--preset--font-size--medium) !important;
+      }
+      .has-large-font-size {
+        font-size: var(--wp--preset--font-size--large) !important;
+      }
+      .has-x-large-font-size {
+        font-size: var(--wp--preset--font-size--x-large) !important;
+      }
+      .has-xx-large-font-size {
+        font-size: var(--wp--preset--font-size--xx-large) !important;
+      }
+      .has-freight-big-pro-font-family {
+        font-family: var(--wp--preset--font-family--freight-big-pro) !important;
+      }
+      .has-inter-font-family {
+        font-family: var(--wp--preset--font-family--inter) !important;
+      }
+      :root :where(.wp-block-pullquote) {
+        font-size: clamp(0.984em, 0.984rem + ((1vw - 0.2em) * 0.645), 1.5em);
+        line-height: 1.6;
+      }
+      :root :where(p) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      :root :where(.wp-block-list) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 1em;
+      }
+      :root :where(.wp-block-separator) {
+        background-color: transparent;
+        border-top-width: 0;
+        border-top-style: none;
+        border-right-width: 0;
+        border-right-style: none;
+        border-bottom-color: rgba(var(--rgb--1), 0.1);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-left-width: 0;
+        border-left-style: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: transparent;
+      }
+      :root :where(.wp-block-quote) {
+        border-width: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      }
+      :root :where(.wp-block-table > table) {
+        border-color: inherit;
+        border-width: 1px;
+        border-style: solid;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="typekit-fonts-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/rdc2dzq.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="google-fonts-inter-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/css2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="reset-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/reset.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="app-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/app.css"
+      type="text/css"
+      media="all"
+    />
+    <noscript
+      ><style>
+        .lazyload[data-src] {
+          display: none !important;
+        }
+      </style></noscript
+    >
+    <style>
+      /* Scroll Header Styles */
+      body.is-header-scrolled .c-header[data-cid] {
+        --inline-background-color: rgba(var(--rgb--2), 0.95);
+      }
+
+      .inline_logo .logo_anchor {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color--2);
+        text-decoration: none;
+        transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      body.is-header-scrolled .inline_logo .logo_anchor {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.is-header-scrolled .header_inline {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+      }
+
+      .lazyload {
+        background-image: none !important;
+      }
+      .lazyload:before {
+        background-image: none !important;
+      }
+    </style>
+    <link
+      rel="icon"
+      href="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon-32x32.jpg"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon-192x192.jpg"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon-180x180.jpg"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/cropped-favicon-270x270.jpg"
+    />
+    <script
+      bis_use="true"
+      type="text/javascript"
+      charset="utf-8"
+      data-bis-config='["facebook.com/","twitter.com/","youtube-nocookie.com/embed/","//vk.com/","//www.vk.com/","linkedin.com/","//www.linkedin.com/","//instagram.com/","//www.instagram.com/","//www.google.com/recaptcha/api2/","//hangouts.google.com/webchat/","//www.google.com/calendar/","//www.google.com/maps/embed","spotify.com/","soundcloud.com/","//player.vimeo.com/","//disqus.com/","//tgwidget.com/","//js.driftt.com/","friends2follow.com","/widget","login","//video.bigmir.net/","blogger.com","//smartlock.google.com/","//keep.google.com/","/web.tolstoycomments.com/","moz-extension://","chrome-extension://","/auth/","//analytics.google.com/","adclarity.com","paddle.com/checkout","hcaptcha.com","recaptcha.net","2captcha.com","accounts.google.com","www.google.com/shopping/customerreviews","buy.tinypass.com","gstatic.com","secureir.ebaystatic.com","docs.google.com","contacts.google.com","github.com","mail.google.com","chat.google.com","audio.xpleer.com","keepa.com","static.xx.fbcdn.net","sas.selleramp.com","1plus1.video","console.googletagservices.com","//lnkd.demdex.net/","//radar.cedexis.com/","//li.protechts.net/","challenges.cloudflare.com/","ogs.google.com"]'
+      src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"
+    ></script>
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/660.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_amenity-swiper-amenity-swiper-js.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_amenity-swiper-amenity-swiper-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_contact-scroller-contact-scroller-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_cta-banner-cta-banner-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_header-header-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_headlines-headlines-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hero-hero-js.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hgroup-media-hgroup-media-js.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hgroup-media-hgroup-media-js.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/770.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/770.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_map-interactive-map-interactive-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_modal-media-form-modal-media-form-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_montage-reveal-montage-reveal-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-img-scatter-text-img-scatter-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-marquee-text-marquee-js.chunk"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_unit-list-unit-list-js.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_amenity-swiper-amenity-swiper-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_amenity-swiper-amenity-swiper-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_center-text-center-text-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_center-text-center-text-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_contact-scroller-contact-scroller-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_contact-scroller-contact-scroller-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_cta-banner-cta-banner-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_cta-banner-cta-banner-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_footer-footer-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_footer-footer-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_header-header-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_header-header-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_headlines-headlines-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_headlines-headlines-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hero-hero-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hero-hero-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hgroup-media-hgroup-media-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hgroup-media-hgroup-media-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_map-interactive-map-interactive-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_map-interactive-map-interactive-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_modal-media-form-modal-media-form-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_modal-media-form-modal-media-form-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_montage-reveal-montage-reveal-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_montage-reveal-montage-reveal-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_password-password-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_password-password-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-img-scatter-text-img-scatter-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-img-scatter-text-img-scatter-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-marquee-text-marquee-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-marquee-text-marquee-css.chunk"
+    />
+    <link
+      rel="prefetch"
+      as="style"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_unit-list-unit-list-css.css"
+    />
+    <link
+      charset="utf-8"
+      rel="prefetch"
+      as="script"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_unit-list-unit-list-css.chunk"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_header-header-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_modal-media-form-modal-media-form-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_hero-hero-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_center-text-center-text-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_montage-reveal-montage-reveal-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-marquee-text-marquee-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_text-img-scatter-text-img-scatter-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_headlines-headlines-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_cta-banner-cta-banner-css.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/block_footer-footer-css.css"
+    />
+    <style id="brand-overrides">
+      :root {
+        --base--background-color: #0f0f10;
+        --base--text-color: #e6e6e9;
+        --wp--preset--color--primary-1: #2d2e82;
+        --wp--preset--color--primary-2: #c6514a;
+      }
+      body {
+        background-color: var(--base--background-color);
+        color: var(--base--text-color);
+      }
+      .u-btn--1 {
+        border-color: var(--wp--preset--color--primary-1);
+      }
+    </style>
+  </head>
+
+  <body
+    class="home wp-singular page-template-default page page-id-83 wp-theme-eight80 page-homepage"
+    __processed_c5df9d1b-bb7b-4470-8fe6-efdecc744d04__="true"
+    bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZGlzYWJsZWQiLCJDT05GSUciOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMi4wLjM1Iiwic2NvcmUiOjIwMDM1fV0="
+    data-scrolling-direction="up"
+    data-scrolling-started="false"
+  >
+    <section
+      data-duration="800"
+      data-cid="preloader"
+      class="c-preloader is-hidden"
+    >
+      <div class="preloader_logo" bis_skin_checked="1">
+        <img class="logo_src" src="Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/logoCreo.svg" alt="Creo Media Logo" />
+      </div>
+    </section>
+    <section
+      data-cid="header"
+      data-js=""
+      data-js-state="loaded"
+      data-critical=""
+      class="c-header has-css-loaded"
+    >
+      <div
+        class="header_inline"
+        style="opacity: 0; transform: translateY(-20px); visibility: hidden"
+        bis_skin_checked="1"
+      >
+        <aside class="inline_menu inline_part">
+          <button class="button -menu u-disable-button js-menu-toggle">
+            <div class="btn_ico" bis_skin_checked="1">
+              <div class="ico_to:open" bis_skin_checked="1"><i></i><i></i></div>
+              <div class="ico_to:exit" bis_skin_checked="1"><i></i><i></i></div>
+            </div>
+            <div
+              class="btn_label"
+              data-ref="menu-button-label"
+              bis_skin_checked="1"
+            >
+              MENU
+            </div>
+          </button>
+        </aside>
+        <aside class="inline_logo inline_part" data-ref="logo-anchor">
+          <a
+            class="logo_anchor no-swup"
+            href="eight80bk.kinsta.cloud.html"
+            title="Eight80"
+            target="_self"
+            ><img src="Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/logoCreoNoText.svg" alt="Creo Media Mark" style="height: 30px; width: auto;" /></a
+          >
+        </aside>
+        <aside class="inline_cta inline_part">
+          <a class="button" href="http://eight80bk.com/" aria-label="View Work"
+            ><span class="btn_label">View Work</span></a
+          ><a
+            class="button"
+            href="eight80bk.kinsta.cloud_availability.html"
+            aria-label="Availability"
+            target="_self"
+            data-cursor="-pointer"
+            ><span class="btn_label">Availability</span></a
+          >
+          <a
+            class="social-button -instagram"
+            href="https://instagram.com/creomedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </aside>
+      </div>
+      <nav
+        class="header_popup"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        tabindex="-1"
+      >
+        <div
+          class="popup_main"
+          tabindex="0"
+          style="transform: scaleY(0)"
+          data-lenis-prevent=""
+          bis_skin_checked="1"
+        >
+          <div class="main_inner" style="opacity: 0" bis_skin_checked="1">
+            <ul class="main_menu">
+              <li class="menu_item">
+                <a
+                  class="item_btn js-link"
+                  href="eight80bk.kinsta.cloud_residences.html"
+                  aria-label="Residences"
+                  target="_self"
+                  data-cursor="-pointer"
+                  data-has-images="true"
+                  data-image-left="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES.jpg"
+                  data-image-right="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg"
+                  ><span class="btn_label">Residences</span></a
+                >
+              </li>
+              <li class="menu_item">
+                <a
+                  class="item_btn js-link"
+                  href="eight80bk.kinsta.cloud_amenities.html"
+                  aria-label="Amenities"
+                  target="_self"
+                  data-cursor="-pointer"
+                  data-has-images="true"
+                  data-image-left="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/8_880-Atlantic-Ave_SECOND-FLOOR_3_Game01-1-scaled.jpg"
+                  data-image-right="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.25.04-1.jpg"
+                  ><span class="btn_label">Amenities</span></a
+                >
+              </li>
+              <li class="menu_item">
+                <a
+                  class="item_btn js-link"
+                  href="#neighborhood"
+                  aria-label="Neighborhood"
+                  target="_self"
+                  data-cursor="-pointer"
+                  data-has-images="true"
+                  data-image-left="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Mask-group-2.jpg"
+                  data-image-right="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/istockphoto-1447487152-2048x2048-copy-1.jpg"
+                  ><span class="btn_label">Neighborhood</span></a
+                >
+              </li>
+              <li class="menu_item">
+                <a
+                  class="item_btn js-link"
+                  href="eight80bk.kinsta.cloud_availability.html"
+                  aria-label="Availability"
+                  target="_self"
+                  data-cursor="-pointer"
+                  data-has-images="true"
+                  data-image-left="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-03-PICKLE-BALL-P3-FINAL-MEDIUM-RES.jpg"
+                  data-image-right="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1.jpg"
+                  ><span class="btn_label">Availability</span></a
+                >
+              </li>
+              <li class="menu_item">
+                <a
+                  class="item_btn js-link"
+                  href="eight80bk.kinsta.cloud_contact.html"
+                  aria-label="Contact"
+                  target="_self"
+                  data-cursor="-pointer"
+                  data-has-images="true"
+                  data-image-left="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/kitchen.jpg"
+                  data-image-right="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.25.40-1.jpg"
+                  ><span class="btn_label">Contact</span></a
+                >
+              </li>
+            </ul>
+            <div class="main_cta" bis_skin_checked="1">
+              <a
+                class="button"
+                href="http://eight80bk.com/"
+                aria-label="Resident Login"
+                target="_self"
+                data-cursor="-pointer"
+                ><span class="btn_label">Resident Login</span></a
+              ><a
+                class="button"
+                href="eight80bk.kinsta.cloud_availability.html"
+                aria-label="Availability"
+                target="_self"
+                data-cursor="-pointer"
+                ><span class="btn_label">Availability</span></a
+              >
+            </div>
+            <div
+              class="main_address u-container u-container--1 u-container--pad"
+              bis_skin_checked="1"
+            >
+              <div class="address_text" bis_skin_checked="1">880</div>
+              <div class="address_text" bis_skin_checked="1">Atlantic Ave</div>
+              <div class="address_text" bis_skin_checked="1">Brooklyn, NY</div>
+            </div>
+            <figure
+              class="main_image -left"
+              data-ref="menu-image-left"
+            ></figure>
+            <figure class="main_image -left"></figure>
+            <figure
+              class="main_image -right"
+              data-ref="menu-image-right"
+            ></figure>
+            <figure class="main_image -right"></figure>
+          </div>
+        </div>
+      </nav>
+      <a
+        class="header_badge"
+        style="opacity: 0; transform: translate(100%, -50%)"
+        href="eight80bk.kinsta.cloud_contact.html"
+        target=""
+        aria-label="Book a Tour"
+      >
+        <div class="badge_inner" bis_skin_checked="1">
+          <span class="badge_text">Contact Us</span>
+        </div>
+      </a>
+    </section>
+    <section
+      data-modal-group-status="inactive"
+      aria-hidden="true"
+      data-cid="modal-media-form"
+      data-js=""
+      data-js-state="loaded"
+      class="c-modal-media-form has-css-loaded"
+      style="opacity: 0; pointer-events: none; visibility: hidden"
+    >
+      <div
+        data-modal-close=""
+        class="modal_underlay"
+        bis_skin_checked="1"
+      ></div>
+      <div
+        data-modal-name="modal-media"
+        data-modal-status="inactive"
+        class="modal_card"
+        bis_skin_checked="1"
+      >
+        <div class="modal_scroll" data-lenis-prevent="" bis_skin_checked="1">
+          <div class="modal_content" bis_skin_checked="1">
+            <hgroup class="head">
+              <div
+                class="head_title u-wysiwyg-text--1"
+                style=""
+                bis_skin_checked="1"
+              >
+                PLEASE PROVIDE YOUR<br />
+                NAME AND EMAIL
+              </div>
+            </hgroup>
+            <form
+              class="form"
+              data-ref="form"
+              data-success-message="&lt;p&gt;Your request has been successfully submitted. Our team will get back to you as soon as possible.&lt;/p&gt; &lt;p&gt;Thank you for your interest!&lt;/p&gt;"
+              data-error-message="&lt;p&gt;Oops! There was a problem submitting your request. Please try again later.&lt;/p&gt;"
+              action="https://formcarry.com/s/Dm0veAYK3Ds"
+              method="POST"
+              accept-charset="utf-8"
+              data-inview=""
+            >
+              <div class="form_wrapper" data-ref="fields" bis_skin_checked="1">
+                <div class="form_fields" bis_skin_checked="1">
+                  <div
+                    class="form_field is-filled"
+                    style="display: none"
+                    bis_skin_checked="1"
+                  >
+                    <label for="apartment">Apartment</label>
+                    <input
+                      type="text"
+                      name="apartment"
+                      id="apartment"
+                      value="Not specified"
+                      readonly=""
+                    />
+                  </div>
+                  <div class="form_field" bis_skin_checked="1">
+                    <label for="fname"
+                      >First Name<span class="req">*</span></label
+                    >
+                    <input
+                      type="text"
+                      name="fname"
+                      id="fname"
+                      autocomplete="given-name"
+                      required=""
+                    />
+                  </div>
+                  <div class="form_field" bis_skin_checked="1">
+                    <label for="lname"
+                      >Last Name<span class="req">*</span></label
+                    >
+                    <input
+                      type="text"
+                      name="lname"
+                      id="lname"
+                      autocomplete="family-name"
+                      required=""
+                    />
+                  </div>
+                  <div class="form_field" bis_skin_checked="1">
+                    <label for="email"
+                      >Email Address<span class="req">*</span></label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autocomplete="email"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="form_submit" bis_skin_checked="1">
+                  <button type="submit" class="submit_btn u-btn--1 -preset--1">
+                    <span class="btn_label">View media</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="form_response u-wysiwyg-text--1 u-wysiwyg-lists--1"
+                data-ref="response"
+                bis_skin_checked="1"
+              ></div>
+            </form>
+          </div>
+        </div>
+        <button data-modal-close="" class="modal_btn-close u-disable-button">
+          <div class="modal_btn-close-bar" bis_skin_checked="1"></div>
+          <div class="modal_btn-close-bar" bis_skin_checked="1"></div>
+        </button>
+      </div>
+    </section>
+    <main id="main-content" data-load-container="">
+      <div id="swup" class="page transition-default" bis_skin_checked="1">
+        <section
+          data-hero-visible="true"
+          data-cid="hero"
+          data-js=""
+          data-js-state="loaded"
+          id="block_5f3f237c6a2b2cbdb335352b3f9d3a47"
+          class="block-hero -type--logo c-hero u-default has-css-loaded"
+        >
+          <div
+            class="block_inner u-container u-container--1 u-container--pad"
+            bis_skin_checked="1"
+          >
+            <h1 class="logo">
+              <img class="logo_img" src="Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/logoCreo.svg" alt="Creo Media Logo" />
+            </h1>
+            <div class="split" bis_skin_checked="1">
+              <div class="split_text" bis_skin_checked="1">880</div>
+              <div class="split_text" bis_skin_checked="1">Atlantic Ave</div>
+              <div class="split_text" bis_skin_checked="1">Brooklyn, NY</div>
+            </div>
+          </div>
+          <figure
+            class="hero_background u-absolute-fill"
+            data-onscroll=""
+            data-onscroll-offset="0, 200"
+            data-onscroll-start="start start"
+          >
+            <div
+              class="background-overlay u-absolute-fill"
+              style="background-color: rgba(0, 0, 0, 0.3)"
+              bis_skin_checked="1"
+            ></div>
+            <img
+              decoding="async"
+              src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg"
+              alt=""
+              loading="lazy"
+              class="background-image u-cover-object img-crop lazyautosizes lazyloaded"
+              data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg"
+              data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg 1920w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-300x215.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1024x734.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-768x550.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1536x1100.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-2048x1467.jpg 2048w"
+              data-sizes="auto"
+              data-eio-rwidth="1920"
+              data-eio-rheight="1376"
+              sizes="1351px"
+              srcset="
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg           1920w,
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-300x215.jpg    300w,
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1024x734.jpg  1024w,
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-768x550.jpg    768w,
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1536x1100.jpg 1536w,
+                https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-2048x1467.jpg 2048w
+              "
+            /><noscript
+              ><img
+                decoding="async"
+                src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg"
+                srcset="
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1.jpg           1920w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-300x215.jpg    300w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1024x734.jpg  1024w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-768x550.jpg    768w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-1536x1100.jpg 1536w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-02-ROOF-TERRACE-P2-MEDIUM-RES-1-2048x1467.jpg 2048w
+                "
+                sizes="(max-width: 1920px) 100vw, 1920px"
+                alt=""
+                loading="lazy"
+                class="background-image u-cover-object img-crop"
+                data-eio="l"
+            /></noscript>
+          </figure>
+        </section>
+
+        <section
+          style="
+            --block-background-color: #fafafa;
+            padding-block: clamp(70px, calc(52.5px + 4.16667cqw), 120px);
+          "
+          data-cid="center-text"
+          id="block_24e4f3c937fda94cd634069258498ad0"
+          class="block-center-text -bg-color--fafafa c-center-text u-default has-css-loaded"
+        >
+          <div
+            class="inner u-container u-container--3 u-container--pad"
+            bis_skin_checked="1"
+          >
+            <h1
+              class="heading u-wysiwyg-text--1"
+              data-split-animation=""
+              style="opacity: 1"
+            >
+              Where bold ideas become immersive experiences.
+            </h1>
+            <h2
+              class="text u-wysiwyg-text--1 u-wysiwyg-lists--1"
+              data-split-animation=""
+              data-split-stagger="0.02"
+              data-split-duration="0.6"
+              style="opacity: 1"
+            >
+              <p>
+                Creo Media blends strategy, storytelling, and technology to
+                craft cinematic brand moments.
+              </p>
+            </h2>
+            <div class="line" bis_skin_checked="1"></div>
+          </div>
+        </section>
+
+        <section
+          data-cid="montage-reveal"
+          data-js=""
+          data-js-state="loaded"
+          id="block_dc2bdd94d9a3f870b4d143039b8bfa0d"
+          class="block-montage-reveal c-montage-reveal u-default has-css-loaded"
+        >
+          <div
+            class="pin-spacer pin-spacer-montage-reveal"
+            style="
+              order: 0;
+              place-self: auto;
+              grid-area: auto;
+              z-index: auto;
+              float: none;
+              flex-shrink: 1;
+              display: flex;
+              margin: 0px;
+              inset: 0px 0px 1911px;
+              position: absolute;
+              flex-basis: auto;
+              overflow: visible;
+              box-sizing: border-box;
+              width: 1351px;
+              height: 2338px;
+              padding: 0px 0px 1821px;
+            "
+            bis_skin_checked="1"
+          >
+            <div
+              class="block_canvas"
+              data-ref="canvas"
+              bis_skin_checked="1"
+              style="
+                translate: none;
+                rotate: none;
+                scale: none;
+                inset: 0px auto auto 0px;
+                margin: 0px;
+                max-width: 1351px;
+                width: 1351px;
+                max-height: 517px;
+                height: 517px;
+                padding: 0px;
+                transform: translate(0px, 0px);
+              "
+            >
+              <aside
+                class="canvas_side"
+                data-ref="left-side"
+                style="
+                  grid-template-rows: 113.953px 227.938px;
+                  gap: 20px;
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  height: 69.9983%;
+                  left: 0px;
+                  transform: translate(0%, 0px);
+                "
+              >
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    fetchpriority="high"
+                    decoding="async"
+                    width="1024"
+                    height="645"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg"
+                    class="image_src lazyautosizes lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-300x189.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-768x484.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1536x968.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-2048x1290.jpg 2048w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES.jpg 1920w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1024"
+                    data-eio-rheight="645"
+                    sizes="575px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg  1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-300x189.jpg    300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-768x484.jpg    768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1536x968.jpg  1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-2048x1290.jpg 2048w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES.jpg           1920w
+                    "
+                  /><noscript
+                    ><img
+                      fetchpriority="high"
+                      decoding="async"
+                      width="1024"
+                      height="645"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg"
+                      class="image_src"
+                      alt=""
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1024x645.jpg  1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-300x189.jpg    300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-768x484.jpg    768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-1536x968.jpg  1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES-2048x1290.jpg 2048w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-06-BED-RM-P3-MEDIUM-RES.jpg           1920w
+                      "
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    decoding="async"
+                    width="1024"
+                    height="944"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg"
+                    class="image_src lazyautosizes lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-300x277.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-768x708.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1536x1416.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1.jpg 1920w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1024"
+                    data-eio-rheight="944"
+                    sizes="193px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg  1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-300x277.jpg    300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-768x708.jpg    768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1536x1416.jpg 1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1.jpg           1920w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      width="1024"
+                      height="944"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg"
+                      class="image_src"
+                      alt=""
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1024x944.jpg  1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-300x277.jpg    300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-768x708.jpg    768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1-1536x1416.jpg 1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-14.37.49-1.jpg           1920w
+                      "
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    decoding="async"
+                    width="683"
+                    height="1024"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/6945707-uhd_1396_2092_25fps-ezgif.com-video-to-gif-converter.gif"
+                    class="image_src lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/6945707-uhd_1396_2092_25fps-ezgif.com-video-to-gif-converter.gif"
+                    data-eio-rwidth="800"
+                    data-eio-rheight="1199"
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      width="683"
+                      height="1024"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/6945707-uhd_1396_2092_25fps-ezgif.com-video-to-gif-converter.gif"
+                      class="image_src"
+                      alt=""
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+              </aside>
+              <div
+                class="canvas_center"
+                data-ref="center"
+                bis_skin_checked="1"
+                style="max-height: 70%; max-width: 37.0096%"
+              >
+                <div
+                  class="center_content"
+                  data-ref="center-content"
+                  bis_skin_checked="1"
+                  style="
+                    translate: none;
+                    rotate: none;
+                    scale: none;
+                    transform: scale(1.2, 1.2);
+                    opacity: 0;
+                  "
+                >
+                  <div class="content_label" bis_skin_checked="1">
+                    Capabilities
+                  </div>
+                  <div
+                    class="content_heading u-wysiwyg-text--1"
+                    style=""
+                    bis_skin_checked="1"
+                  >
+                    Creative<br />Technology<br />Studio
+                  </div>
+                  <div
+                    class="content_text u-wysiwyg-text--1 u-wysiwyg-lists--1"
+                    style=""
+                    bis_skin_checked="1"
+                  >
+                    From concept through launch, we design and build rich
+                    interactive experiences that move audiences.
+                  </div>
+                  <a
+                    class="content_button u-btn--1"
+                    href="eight80bk.kinsta.cloud_residences.html"
+                    aria-label="Explore Residences"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Start a Project</span></a
+                  >
+                </div>
+                <figure class="center_image" data-ref="center-image">
+                  <img
+                    decoding="async"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg"
+                    alt=""
+                    loading="lazy"
+                    class="background-image u-cover-object img-crop lazyautosizes lazyloaded"
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg 1920w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-300x196.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1024x670.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-768x503.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1536x1006.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-2048x1341.jpg 2048w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1920"
+                    data-eio-rheight="1257"
+                    sizes="553px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg           1920w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-300x196.jpg    300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1024x670.jpg  1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-768x503.jpg    768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1536x1006.jpg 1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-2048x1341.jpg 2048w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg"
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES.jpg           1920w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-300x196.jpg    300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1024x670.jpg  1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-768x503.jpg    768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-1536x1006.jpg 1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-08-LIVING-RM-P4-FINAL-MEDIUM-RES-2048x1341.jpg 2048w
+                      "
+                      sizes="(max-width: 1920px) 100vw, 1920px"
+                      alt=""
+                      loading="lazy"
+                      class="background-image u-cover-object img-crop"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+              </div>
+              <aside
+                class="canvas_side"
+                data-ref="right-side"
+                style="
+                  grid-template-rows: 227.922px 113.953px;
+                  gap: 20px;
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  height: 69.9983%;
+                  right: 0px;
+                  transform: translate(0%, 0px);
+                "
+              >
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    decoding="async"
+                    width="818"
+                    height="494"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/Screenshot-2025-03-03-at-16.44.22-1-1.jpg"
+                    class="image_src lazyautosizes lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg 818w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w"
+                    data-sizes="auto"
+                    data-eio-rwidth="818"
+                    data-eio-rheight="494"
+                    sizes="600px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg         818w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      width="818"
+                      height="494"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg"
+                      class="image_src"
+                      alt=""
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg         818w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w
+                      "
+                      sizes="(max-width: 818px) 100vw, 818px"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    decoding="async"
+                    width="1024"
+                    height="770"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg"
+                    class="image_src lazyautosizes lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-300x225.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-768x577.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1536x1154.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-2048x1539.jpg 2048w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES.jpg 1920w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1024"
+                    data-eio-rheight="770"
+                    sizes="304px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg  1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-300x225.jpg    300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-768x577.jpg    768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1536x1154.jpg 1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-2048x1539.jpg 2048w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES.jpg           1920w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      width="1024"
+                      height="770"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg"
+                      class="image_src"
+                      alt=""
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1024x770.jpg  1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-300x225.jpg    300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-768x577.jpg    768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-1536x1154.jpg 1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES-2048x1539.jpg 2048w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-MEDIUM-RES.jpg           1920w
+                      "
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+                <figure
+                  class="side_element"
+                  data-ref="side-element"
+                  style="opacity: 1; clip-path: inset(0px)"
+                >
+                  <img
+                    decoding="async"
+                    width="1024"
+                    height="688"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg"
+                    class="image_src lazyautosizes lazyloaded"
+                    alt=""
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-300x202.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-768x516.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1.jpg 1190w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1024"
+                    data-eio-rheight="688"
+                    sizes="193px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg 1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-300x202.jpg   300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-768x516.jpg   768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1.jpg          1190w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      width="1024"
+                      height="688"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg"
+                      class="image_src"
+                      alt=""
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-1024x688.jpg 1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-300x202.jpg   300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1-768x516.jpg   768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/4_880-Atlantic-Ave_TYP-BATHROOM-01-1.jpg          1190w
+                      "
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      data-eio="l"
+                  /></noscript>
+                </figure>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style="
+            --block-background-color: #fafafa;
+            padding-top: clamp(0px, calc(0px + 0cqw), 0px);
+            padding-bottom: clamp(70px, calc(63px + 1.66667cqw), 90px);
+          "
+          data-cid="text-marquee"
+          data-js=""
+          data-js-state="loaded"
+          id="block_04b0909cbe6aea1e225eeb67165ec0de"
+          class="block-text-marquee -bg-color--fafafa c-text-marquee u-default has-css-loaded"
+        >
+          <div
+            class="marquee"
+            data-marquee-duplicate="2"
+            data-marquee-scroll-direction-target=""
+            data-marquee-direction="left"
+            data-marquee-status="inverted"
+            data-marquee-speed="15"
+            data-marquee-scroll-speed="10"
+            bis_skin_checked="1"
+          >
+            <div
+              data-marquee-scroll-target=""
+              class="marquee_scroll"
+              bis_skin_checked="1"
+              style="
+                margin-left: -10%;
+                width: 120%;
+                translate: none;
+                rotate: none;
+                scale: none;
+                transform: translate(10vw, 0px);
+              "
+            >
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-38.9914%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-38.9914%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-38.9914%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style="
+            --block-background-color: #fafafa;
+            --block-underlap-color: #f0efed;
+            padding-top: clamp(0px, calc(0px + 0cqw), 0px);
+            padding-bottom: clamp(0px, calc(0px + 0cqw), 0px);
+          "
+          data-cid="text-img-scatter"
+          data-js=""
+          data-js-state="loaded"
+          id="block_fd0870d2c982d513b34f67e8547382b4"
+          class="block-text-img-scatter -bg-color--fafafa -underlap c-text-img-scatter u-default has-css-loaded"
+        >
+          <div
+            class="block_inner u-container u-container--pad u-container--1"
+            bis_skin_checked="1"
+          >
+            <div class="main" bis_skin_checked="1">
+              <figure class="media">
+                <div class="media_wrap" bis_skin_checked="1">
+                  <img
+                    decoding="async"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg"
+                    alt=""
+                    loading="lazy"
+                    class="background-image u-cover-object img-crop lazyautosizes lazyloaded"
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-300x117.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-768x299.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1536x598.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-2048x797.jpg 2048w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES.jpg 1920w"
+                    data-sizes="auto"
+                    data-eio-rwidth="1024"
+                    data-eio-rheight="398"
+                    sizes="1897px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg 1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-300x117.jpg   300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-768x299.jpg   768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1536x598.jpg 1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-2048x797.jpg 2048w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES.jpg          1920w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg"
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1024x398.jpg 1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-300x117.jpg   300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-768x299.jpg   768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-1536x598.jpg 1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES-2048x797.jpg 2048w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-04-LOBBY-P3-MEDIUM-RES.jpg          1920w
+                      "
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      alt=""
+                      loading="lazy"
+                      class="background-image u-cover-object img-crop"
+                      data-eio="l"
+                  /></noscript>
+                </div>
+              </figure>
+              <aside class="content">
+                <div class="content_inner" bis_skin_checked="1">
+                  <div
+                    class="content_heading u-wysiwyg-text--1"
+                    data-split-animation=""
+                    style="opacity: 1"
+                    bis_skin_checked="1"
+                  >
+                    Designed for Every <strong>Moment</strong>
+                  </div>
+                  <div
+                    class="content_text u-wysiwyg-text--1 u-wysiwyg-lists--1"
+                    data-split-animation=""
+                    style="opacity: 1"
+                    bis_skin_checked="1"
+                  >
+                    Our amenities are designed for balance and well-being.
+                    Whether you’re unwinding, staying active, or connecting with
+                    neighbors, every space will enhance your daily living
+                    experience.
+                  </div>
+                  <a
+                    class="content_btn u-btn--1"
+                    href="eight80bk.kinsta.cloud_amenities.html"
+                    aria-label="Discover Amenities"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Discover Amenities</span></a
+                  >
+                </div>
+              </aside>
+            </div>
+            <div class="additional_images" bis_skin_checked="1">
+              <figure
+                class="images_md"
+                data-onscroll=""
+                data-onscroll-offset="0, 50"
+              >
+                <div class="media_wrap" bis_skin_checked="1">
+                  <img
+                    decoding="async"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg"
+                    alt=""
+                    loading="lazy"
+                    class="background-image u-cover-object img-crop lazyautosizes ls-is-cached lazyloaded"
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-300x176.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1024x602.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1536x902.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-2048x1203.jpg 2048w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES.jpg 1920w"
+                    data-sizes="auto"
+                    data-eio-rwidth="768"
+                    data-eio-rheight="451"
+                    sizes="801px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg    768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-300x176.jpg    300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1024x602.jpg  1024w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1536x902.jpg  1536w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-2048x1203.jpg 2048w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES.jpg           1920w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg"
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-768x451.jpg    768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-300x176.jpg    300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1024x602.jpg  1024w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-1536x902.jpg  1536w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES-2048x1203.jpg 2048w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-05-COLD-PLUNGE-P2-MEDIUM-RES.jpg           1920w
+                      "
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      alt=""
+                      loading="lazy"
+                      class="background-image u-cover-object img-crop"
+                      data-eio="l"
+                  /></noscript>
+                </div>
+              </figure>
+              <figure
+                class="images_sm"
+                data-onscroll=""
+                data-onscroll-offset="0, -100"
+              >
+                <div class="media_wrap" bis_skin_checked="1">
+                  <img
+                    decoding="async"
+                    src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg"
+                    alt=""
+                    loading="lazy"
+                    class="background-image u-cover-object img-crop lazyautosizes ls-is-cached lazyloaded"
+                    data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg"
+                    data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg 818w"
+                    data-sizes="auto"
+                    data-eio-rwidth="300"
+                    data-eio-rheight="181"
+                    sizes="481px"
+                    srcset="
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w,
+                      https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg         818w
+                    "
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg"
+                      srcset="
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-300x181.jpg 300w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1-768x464.jpg 768w,
+                        https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/Screenshot-2025-03-03-at-16.44.22-1-1.jpg         818w
+                      "
+                      sizes="(max-width: 300px) 100vw, 300px"
+                      alt=""
+                      loading="lazy"
+                      class="background-image u-cover-object img-crop"
+                      data-eio="l"
+                  /></noscript>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style="
+            --block-background-color: #f0efed;
+            padding-top: clamp(70px, calc(45.5px + 5.83333cqw), 140px);
+            padding-bottom: clamp(70px, calc(17.5px + 12.5cqw), 220px);
+          "
+          data-cid="headlines"
+          data-js=""
+          data-js-state="loading"
+          id="block_e52b72928a8b523bdafaf31db22787eb"
+          class="block-headlines -bg-color--f0efed c-headlines u-default has-css-loaded"
+        >
+          <div
+            class="block_inner u-container u-container--1 u-container--pad"
+            bis_skin_checked="1"
+          >
+            <div
+              class="heading u-wysiwyg-text--1"
+              style=""
+              bis_skin_checked="1"
+            >
+              Brooklyn
+              <div class="content" bis_skin_checked="1">
+                <div
+                  class="text u-wysiwyg-text--1 u-wysiwyg-lists--1"
+                  style=""
+                  bis_skin_checked="1"
+                >
+                  With a vibrant mix of cafés, boutiques, and cultural
+                  destinations just steps away, Eight80 puts you in the heart of
+                  it all. Step outside, explore endlessly.
+                </div>
+                <a
+                  class="button u-btn--1"
+                  href="#neighborhood"
+                  aria-label="view the neighborhood"
+                  target="_self"
+                  data-cursor="-pointer"
+                  ><span class="btn_label">view the neighborhood</span></a
+                >
+              </div>
+              <br />
+              <em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em
+              ><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em
+              ><em>&nbsp;</em><em>&nbsp;</em>at
+              <figure class="media">
+                <video
+                  class="js-video-handler background-video u-absolute-fill u-cover-object has-lazy-loaded"
+                  data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/05121.mp4"
+                  data-video-options='{"attributes":["muted","autoplay","loop","playsinline"]}'
+                  bis_skin_checked="1"
+                  muted=""
+                  autoplay=""
+                  loop=""
+                  playsinline=""
+                >
+                  Your browser does not support the video tag.
+                  <source
+                    src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/05121.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </figure>
+              your<br />
+              <em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em
+              ><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em
+              ><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em><em>&nbsp;</em
+              ><em>&nbsp;</em><em>&nbsp;</em>doorstep
+            </div>
+            <div class="content" bis_skin_checked="1">
+              <div
+                class="text u-wysiwyg-text--1 u-wysiwyg-lists--1"
+                style=""
+                bis_skin_checked="1"
+              >
+                With a vibrant mix of cafés, boutiques, and cultural
+                destinations just steps away, Eight80 puts you in the heart of
+                it all. Step outside, explore endlessly.
+              </div>
+              <a
+                class="button u-btn--1"
+                href="#neighborhood"
+                aria-label="view the neighborhood"
+                target="_self"
+                data-cursor="-pointer"
+                ><span class="btn_label">view the neighborhood</span></a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-cid="cta-banner"
+          data-js=""
+          data-js-state="loaded"
+          id="block_2764fa490f40e6f5ff1158c946196640"
+          class="block-cta-banner c-cta-banner u-default has-css-loaded"
+        >
+          <div
+            class="block_inner u-container u-container--1 u-container--pad"
+            bis_skin_checked="1"
+          >
+            <div class="label" bis_skin_checked="1">Availability</div>
+            <a
+              class="image"
+              href="eight80bk.kinsta.cloud_availability.html"
+              aria-label="View more"
+              data-cursor="-pointer"
+              data-cursor-text="View"
+            >
+              <img
+                decoding="async"
+                width="1920"
+                height="1443"
+                src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg"
+                class="image_inner u-cover-object lazyautosizes ls-is-cached lazyloaded"
+                alt=""
+                data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg"
+                data-srcset="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg 1920w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-300x225.jpg 300w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1024x770.jpg 1024w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-768x577.jpg 768w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1536x1154.jpg 1536w, https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-2048x1539.jpg 2048w"
+                data-sizes="auto"
+                data-eio-rwidth="1920"
+                data-eio-rheight="1443"
+                sizes="825px"
+                srcset="
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg           1920w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-300x225.jpg    300w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1024x770.jpg  1024w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-768x577.jpg    768w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1536x1154.jpg 1536w,
+                  https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-2048x1539.jpg 2048w
+                "
+              /><noscript
+                ><img
+                  decoding="async"
+                  width="1920"
+                  height="1443"
+                  src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg"
+                  class="image_inner u-cover-object"
+                  alt=""
+                  srcset="
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES.jpg           1920w,
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-300x225.jpg    300w,
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1024x770.jpg  1024w,
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-768x577.jpg    768w,
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-1536x1154.jpg 1536w,
+                    https://eight80bk.kinsta.cloud/wp-content/uploads/2025/05/880-ATLANTIC-07-KITCHEN-P3-FINAL-MEDIUM-RES-2048x1539.jpg 2048w
+                  "
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  data-eio="l"
+              /></noscript>
+            </a>
+            <div class="description" bis_skin_checked="1">
+              Luxury living starts here. Browse our available residences and
+              find the perfect space to call home.
+            </div>
+            <a
+              class="button u-btn--1"
+              href="eight80bk.kinsta.cloud_availability.html"
+              aria-label="View Availability"
+              target="_self"
+              data-cursor="-pointer"
+              ><span class="btn_label">View Availability</span></a
+            >
+          </div>
+          <div
+            class="marquee"
+            data-marquee-duplicate="2"
+            data-marquee-scroll-direction-target=""
+            data-marquee-direction="left"
+            data-marquee-status="inverted"
+            data-marquee-speed="15"
+            data-marquee-scroll-speed="10"
+            bis_skin_checked="1"
+          >
+            <div
+              data-marquee-scroll-target=""
+              class="marquee_scroll"
+              bis_skin_checked="1"
+              style="
+                margin-left: -10%;
+                width: 120%;
+                translate: none;
+                rotate: none;
+                scale: none;
+                transform: translate(10vw, 0px);
+              "
+            >
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-53.1385%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-53.1385%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+              <div
+                data-marquee-collection-target=""
+                class="marquee_collection"
+                bis_skin_checked="1"
+                style="
+                  translate: none;
+                  rotate: none;
+                  scale: none;
+                  transform: translate(-53.1385%, 0%) translate3d(0px, 0px, 0px);
+                "
+              >
+                <div class="marquee_text" bis_skin_checked="1">
+                  Capabilities
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          data-onscroll=""
+          data-onscroll-start="top bottom"
+          data-onscroll-end="bottom bottom"
+          data-onscroll-from='{"filter": "brightness(0.5)"}'
+          data-onscroll-to='{"filter": "brightness(1)"}'
+          data-onscroll-offset="-100px, 0"
+          data-cid="footer"
+          class="c-footer u-default has-css-loaded"
+        >
+          <div
+            class="block_inner u-container u-container--1 u-container--pad"
+            bis_skin_checked="1"
+          >
+            <div class="logo column" bis_skin_checked="1">
+              <img class="logo_svg" src="Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/logoCreo.svg" alt="Creo Media Logo" />
+            </div>
+            <div class="nav column" bis_skin_checked="1">
+              <div class="label" bis_skin_checked="1">Navigation</div>
+              <ul class="nav_menu">
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link is-active"
+                    href="eight80bk.kinsta.cloud.html"
+                    aria-label="Homepage"
+                    target="_self"
+                    data-cursor="-pointer"
+                    tabindex="-1"
+                    aria-current="page"
+                    ><span class="btn_label">Homepage</span></a
+                  >
+                </li>
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link"
+                    href="eight80bk.kinsta.cloud_residences.html"
+                    aria-label="Residences"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Residences</span></a
+                  >
+                </li>
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link"
+                    href="eight80bk.kinsta.cloud_amenities.html"
+                    aria-label="Amenities"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Amenities</span></a
+                  >
+                </li>
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link"
+                    href="#neighborhood"
+                    aria-label="Neighborhood"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Neighborhood</span></a
+                  >
+                </li>
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link"
+                    href="eight80bk.kinsta.cloud_availability.html"
+                    aria-label="Availability"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Availability</span></a
+                  >
+                </li>
+                <li class="menu_item">
+                  <a
+                    class="item_btn js-link"
+                    href="eight80bk.kinsta.cloud_contact.html"
+                    aria-label="Contact"
+                    target="_self"
+                    data-cursor="-pointer"
+                    ><span class="btn_label">Contact</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="contact column" bis_skin_checked="1">
+              <div class="label" bis_skin_checked="1">Contact</div>
+              <div class="contact_info" bis_skin_checked="1">
+                <div class="info_address" bis_skin_checked="1">
+                  880 Atlantic Avenue<br />
+                  Brooklyn, NY 11238
+                </div>
+                <div class="info_links" bis_skin_checked="1">
+                  <a href="mailto:hello@creomedia.com"
+                    >E:&nbsp;Eight80@MNS.com</a
+                  ><a href="tel:12125550123">T:&nbsp;646.300.7273</a>
+                </div>
+              </div>
+            </div>
+            <div class="logos column" bis_skin_checked="1">
+              <img
+                src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/emp-capital.svg"
+                class="logos_img lazyloaded"
+                alt="emp-capital"
+                decoding="async"
+                data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/emp-capital.svg"
+              /><noscript
+                ><img
+                  src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/emp-capital.svg"
+                  class="logos_img"
+                  alt="emp-capital"
+                  decoding="async"
+                  data-eio="l" /></noscript
+              ><img
+                src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/mns-real-estate-nyc.svg"
+                class="logos_img lazyloaded"
+                alt="mns-real-estate-nyc"
+                decoding="async"
+                data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/mns-real-estate-nyc.svg"
+              /><noscript
+                ><img
+                  src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/mns-real-estate-nyc.svg"
+                  class="logos_img"
+                  alt="mns-real-estate-nyc"
+                  decoding="async"
+                  data-eio="l" /></noscript
+              ><img
+                src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/equal-housing.svg"
+                class="logos_img lazyloaded"
+                alt="equal-housing"
+                decoding="async"
+                data-src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/equal-housing.svg"
+              /><noscript
+                ><img
+                  src="https://eight80bk.kinsta.cloud/wp-content/uploads/2025/04/equal-housing.svg"
+                  class="logos_img"
+                  alt="equal-housing"
+                  decoding="async"
+                  data-eio="l"
+              /></noscript>
+            </div>
+            <div class="equal-housing column" bis_skin_checked="1">
+              Equal Housing Opportunity
+            </div>
+            <div class="copyright column" bis_skin_checked="1">
+              <div class="c_copyright" bis_skin_checked="1">
+                © 2025&nbsp;All rights reserved
+              </div>
+            </div>
+            <div class="credits column" bis_skin_checked="1">
+              Creative by&nbsp;<a
+                href="https://krinskydesign.com/?ref=Eight80"
+                target="_blank"
+                >KD</a
+              >
+            </div>
+            <div class="scroll-top column" bis_skin_checked="1">
+              <a
+                href="https://eight80bk.kinsta.cloud/#top"
+                class="scroll-top_btn u-disable-button"
+                aria-label="Scroll to top"
+                >Scroll top</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- .page#swup -->
+    </main>
+    <!-- #top[data-load-container] -->
+
+    <script type="speculationrules">
+      {
+        "prefetch": [
+          {
+            "source": "document",
+            "where": {
+              "and": [
+                { "href_matches": "\/*" },
+                {
+                  "not": {
+                    "href_matches": [
+                      "\/wp-*.php",
+                      "\/wp-admin\/*",
+                      "\/wp-content\/uploads\/*",
+                      "\/wp-content\/*",
+                      "\/wp-content\/plugins\/*",
+                      "\/wp-content\/themes\/eight80\/*",
+                      "\/*\\?(.+)"
+                    ]
+                  }
+                },
+                { "not": { "selector_matches": "a[rel~=\"nofollow\"]" } },
+                {
+                  "not": { "selector_matches": ".no-prefetch, .no-prefetch a" }
+                }
+              ]
+            },
+            "eagerness": "conservative"
+          }
+        ]
+      }
+    </script>
+    <script type="text/javascript" id="eio-lazy-load-js-before">
+      /* <![CDATA[ */
+      var eio_lazy_vars = {
+        exactdn_domain: "",
+        skip_autoscale: 0,
+        threshold: 0,
+        use_dpr: 1,
+      };
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/lazysizes.min.js.download"
+      id="eio-lazy-load-js"
+      async="async"
+      data-wp-strategy="async"
+    ></script>
+    <script type="text/javascript" id="site-js-extra">
+      /* <![CDATA[ */
+      var themeBlockData = {
+        ajaxurl: "https:\/\/eight80bk.kinsta.cloud\/wp-admin\/admin-ajax.php",
+        nonce: "a56e2cdfe3",
+      };
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      src="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/site.js"
+      id="site-js"
+    ></script>
+    <script>
+      // Scroll header functionality
+      (function () {
+        "use strict";
+
+        const SCROLL_THRESHOLD = 50; // pixels before triggering the scroll effect
+
+        function initScrollHeader() {
+          const header = document.querySelector(".c-header[data-cid]");
+          if (!header) return;
+
+          function updateHeaderOnScroll() {
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            if (scrollY > SCROLL_THRESHOLD) {
+              document.body.setAttribute("data-scrolling-started", "true");
+              document.body.classList.add("is-header-scrolled");
+            } else {
+              document.body.setAttribute("data-scrolling-started", "false");
+              document.body.classList.remove("is-header-scrolled");
+            }
+          }
+
+          // Use throttled scroll listener for better performance
+          window.addEventListener(
+            "scroll",
+            throttle(updateHeaderOnScroll, 16), // ~60fps
+            { passive: true }
+          );
+
+          // Initial check in case page loaded with scroll position
+          updateHeaderOnScroll();
+        }
+
+        // Throttle helper function
+        function throttle(fn, limit) {
+          let inThrottle;
+          return function (...args) {
+            if (!inThrottle) {
+              fn.apply(this, args);
+              inThrottle = true;
+              setTimeout(() => (inThrottle = false), limit);
+            }
+          };
+        }
+
+        // Initialize when DOM is ready
+        function ready(fn) {
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", fn, { once: true });
+          } else {
+            fn();
+          }
+        }
+
+        ready(initScrollHeader);
+      })();
+    </script>
+    <div bis_skin_checked="1">
+      <div
+        class="swup-transition-overlay"
+        data-direction="to-top"
+        style="
+          --swup-overlay-theme-color: inherit;
+          --swup-overlay-theme-duration: inherit;
+        "
+        bis_skin_checked="1"
+      ></div>
+    </div>
+
+    <protonpass-root-9097 data-protonpass-role="root" data-protonpass-theme="os"
+      ><template shadowrootmode="closed"></template
+    ></protonpass-root-9097>
+  </body>
+</html>
