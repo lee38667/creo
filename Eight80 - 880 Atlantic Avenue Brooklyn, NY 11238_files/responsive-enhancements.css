@@ -1,0 +1,798 @@
+/* =============================================================================
+   CREO MEDIA - RESPONSIVE ENHANCEMENTS
+   Modern responsive design patterns for optimal viewing on all devices
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. ROOT VARIABLES & BASE RESPONSIVE SETUP
+   ----------------------------------------------------------------------------- */
+:root {
+  /* Fluid spacing scale */
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 3vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 4vw, 2.5rem);
+  --space-xl: clamp(2rem, 6vw, 4rem);
+  --space-2xl: clamp(3rem, 8vw, 6rem);
+
+  /* Fluid typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-4xl: clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Responsive breakpoints */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+}
+
+/* -----------------------------------------------------------------------------
+   2. MOBILE-FIRST BASE STYLES
+   ----------------------------------------------------------------------------- */
+
+/* Ensure proper box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Responsive images and media */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent overflow issues */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Improve text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* -----------------------------------------------------------------------------
+   3. CONTAINER & LAYOUT UTILITIES
+   ----------------------------------------------------------------------------- */
+
+/* Responsive containers */
+.u-container,
+.block_inner {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .u-container,
+  .block_inner {
+    max-width: var(--container-sm);
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .u-container,
+  .block_inner {
+    max-width: var(--container-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .u-container,
+  .block_inner {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .u-container,
+  .block_inner {
+    max-width: var(--container-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  .u-container,
+  .block_inner {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Full-width sections on mobile, contained on larger screens */
+.section-responsive {
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .section-responsive {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   4. RESPONSIVE TYPOGRAPHY
+   ----------------------------------------------------------------------------- */
+
+/* Fluid headings */
+h1, .h1, .heading-1 {
+  font-size: var(--text-4xl);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+h2, .h2, .heading-2 {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h3, .h3, .heading-3 {
+  font-size: var(--text-2xl);
+  line-height: 1.3;
+  margin-bottom: var(--space-sm);
+}
+
+h4, .h4, .heading-4 {
+  font-size: var(--text-xl);
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+}
+
+h5, .h5, .heading-5 {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+h6, .h6, .heading-6 {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+/* Body text responsive sizing */
+p, .body-text {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* Small text */
+.text-sm, small {
+  font-size: var(--text-sm);
+}
+
+/* Extra small text */
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+/* -----------------------------------------------------------------------------
+   5. HEADER & NAVIGATION RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+.c-header[data-cid] {
+  padding: var(--space-sm) var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .c-header[data-cid] {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+/* Mobile menu improvements */
+@media (max-width: 767px) {
+  .c-header nav {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .c-header .menu_list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .c-header .menu_item {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-sm) 0;
+  }
+}
+
+/* Desktop navigation */
+@media (min-width: 768px) {
+  .c-header nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .c-header .menu_list {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   6. HERO SECTION RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+.c-hero[data-cid] {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-xl) var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .c-hero[data-cid] {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
+
+/* Hero content responsive */
+.hero_content {
+  text-align: center;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero_content {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero_content {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero_content {
+    max-width: 70%;
+  }
+}
+
+/* Hero title responsive */
+.hero_title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .hero_title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-lg);
+  }
+}
+
+/* Hero subtitle */
+.hero_subtitle {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .hero_subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   7. GRID LAYOUTS RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+/* Basic responsive grid */
+.grid-responsive {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Two column layout */
+.grid-2col {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* Three column layout */
+.grid-3col {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   8. BUTTONS & INTERACTIVE ELEMENTS
+   ----------------------------------------------------------------------------- */
+
+.u-btn--1, 
+.button,
+.btn {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  min-height: 44px; /* Touch-friendly size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .u-btn--1, 
+  .button,
+  .btn {
+    width: auto;
+    min-width: 120px;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--text-base);
+  }
+}
+
+@media (min-width: 1024px) {
+  .u-btn--1, 
+  .button,
+  .btn {
+    padding: var(--space-md) var(--space-xl);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   9. FORMS RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+.form_field,
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  min-height: 44px; /* Touch-friendly */
+}
+
+@media (min-width: 768px) {
+  .form_field,
+  input,
+  textarea,
+  select {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+.form_fields {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .form_fields {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .form_field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   10. MODAL & OVERLAY RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+.c-modal-media-form[data-cid],
+.modal_card {
+  padding: var(--space-md);
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .c-modal-media-form[data-cid],
+  .modal_card {
+    padding: var(--space-xl);
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-modal-media-form[data-cid],
+  .modal_card {
+    max-width: 800px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   11. VIDEO & MEDIA RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+/* Responsive video containers */
+.video-responsive,
+.media-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive video,
+.media-wrapper iframe,
+.media-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background videos */
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hide decorative videos on mobile to save bandwidth */
+@media (max-width: 767px) {
+  .video-decorative {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   12. FOOTER RESPONSIVE
+   ----------------------------------------------------------------------------- */
+
+.c-footer[data-cid] {
+  padding: var(--space-xl) var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .c-footer[data-cid] {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
+
+.footer_content {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .footer_content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer_content {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   13. MONTAGE & IMAGE GALLERIES
+   ----------------------------------------------------------------------------- */
+
+.c-montage-reveal[data-cid] {
+  padding: var(--space-lg) var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .c-montage-reveal[data-cid] {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+.montage_grid {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .montage_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .montage_grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   14. TEXT & CONTENT BLOCKS
+   ----------------------------------------------------------------------------- */
+
+.c-center-text[data-cid],
+.c-headlines[data-cid] {
+  padding: var(--space-xl) var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .c-center-text[data-cid],
+  .c-headlines[data-cid] {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
+
+/* Content width limits for readability */
+.content_text,
+.text-content {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .content_text,
+  .text-content {
+    max-width: 65ch; /* Optimal reading width */
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   15. UTILITY CLASSES
+   ----------------------------------------------------------------------------- */
+
+/* Responsive display utilities */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.hide-tablet {
+  display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Responsive spacing utilities */
+.spacing-sm {
+  padding: var(--space-sm);
+}
+
+.spacing-md {
+  padding: var(--space-md);
+}
+
+.spacing-lg {
+  padding: var(--space-lg);
+}
+
+.spacing-xl {
+  padding: var(--space-xl);
+}
+
+/* Responsive text alignment */
+.text-center-mobile {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-center-mobile {
+    text-align: left;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   16. TOUCH & INTERACTION IMPROVEMENTS
+   ----------------------------------------------------------------------------- */
+
+/* Larger touch targets on mobile */
+@media (max-width: 767px) {
+  a, button, input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase tap area with padding */
+  nav a {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* Prevent text selection on interactive elements */
+button, .button, a[class*="btn"] {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* -----------------------------------------------------------------------------
+   17. PERFORMANCE OPTIMIZATIONS
+   ----------------------------------------------------------------------------- */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize font rendering on mobile */
+@media (max-width: 767px) {
+  body {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   18. PRINT STYLES
+   ----------------------------------------------------------------------------- */
+
+@media print {
+  /* Remove non-essential elements */
+  .c-header,
+  .c-footer,
+  nav,
+  button,
+  .button {
+    display: none;
+  }
+
+  /* Optimize for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /* Show URLs for links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* Page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   19. LANDSCAPE MOBILE ORIENTATION
+   ----------------------------------------------------------------------------- */
+
+@media (max-width: 767px) and (orientation: landscape) {
+  /* Reduce vertical padding in landscape */
+  .c-hero[data-cid] {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  /* Adjust header height */
+  .c-header[data-cid] {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   20. HIGH DPI / RETINA DISPLAYS
+   ----------------------------------------------------------------------------- */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure images look sharp on retina displays */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}

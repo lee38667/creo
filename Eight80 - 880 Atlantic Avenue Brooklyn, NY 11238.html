@@ -132,21 +132,76 @@
     </style>
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=2"
+      content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
     />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
 
     <title>Creo Media</title>
 
-    <link rel="pingback" href="https://eight80bk.kinsta.cloud/xmlrpc.php" />
+    <link rel="pingback" href=" " />
     <meta name="googlebot" content="index,follow" />
     <meta name="application-name" content="Eight80" />
 
-    <!-- Minimal viewport script -->
+    <!-- Enhanced viewport and responsive script -->
     <script>
       (function () {
-        // Set initial viewport height only once, using window.innerHeight for Safari-like behavior
-        const ivh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--ivh", `${ivh}px`);
+        // Set initial viewport height for Safari and mobile browsers
+        const setViewportHeight = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+          document.documentElement.style.setProperty("--ivh", `${vh}px`);
+        };
+
+        // Set on load
+        setViewportHeight();
+
+        // Update on resize (debounced for performance)
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            setViewportHeight();
+          }, 250);
+        });
+
+        // Update on orientation change
+        window.addEventListener("orientationchange", () => {
+          setTimeout(setViewportHeight, 100);
+        });
+
+        // Add touch device class
+        if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+          document.documentElement.classList.add("touch-device");
+        } else {
+          document.documentElement.classList.add("no-touch");
+        }
+
+        // Add mobile/tablet/desktop class based on screen width
+        const updateDeviceClass = () => {
+          const width = window.innerWidth;
+          document.documentElement.classList.remove(
+            "device-mobile",
+            "device-tablet",
+            "device-desktop"
+          );
+
+          if (width < 768) {
+            document.documentElement.classList.add("device-mobile");
+          } else if (width < 1024) {
+            document.documentElement.classList.add("device-tablet");
+          } else {
+            document.documentElement.classList.add("device-desktop");
+          }
+        };
+
+        updateDeviceClass();
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(updateDeviceClass, 250);
+        });
       })();
     </script>
 
@@ -157,7 +212,126 @@
       }
     </style>
     <style id="critical-css">
-      .c-preloader[data-cid]{align-items:center;background:#301911;bottom:0;display:flex;height:100%;height:100dvh;height:calc(var(--vh)*100);justify-content:center;left:0;opacity:1;overflow:hidden;position:fixed;right:0;text-align:center;top:0;transition-delay:0s;transition-duration:.8s;transition-property:clip-path,opacity,visibility;transition-timing-function:cubic-bezier(.78,0,.22,1);visibility:visible;width:100%;z-index:100;.preloader_logo{aspect-ratio:400/293;margin:auto;max-width:200px;position:relative;text-align:center;vertical-align:middle;width:100%}.logo_src{height:100%;left:0;position:absolute;top:0;width:100%}@media (min-width:769px){.preloader_logo{max-width:400px}}@supports (clip-path:polygon(0 0)){clip-path:polygon(0 0,0 100%,50% 100%,50% 50%,50% 50%,50% 50%,50% 50%,50% 100%,100% 100%,100% 0);opacity:1;pointer-events:none;visibility:visible}}.c-preloader[data-cid].is-hidden{opacity:0;visibility:hidden;@supports (clip-path:polygon(0 0)){clip-path:polygon(0 0,0 100%,0 100%,0 0,100% 0,100% 100%,0 100%,0 100%,100% 100%,100% 0);opacity:1;visibility:visible}}.js-split-animation,[data-split-animation]{max-width:none!important;word-wrap:break-word;&amp;&gt;p{max-width:none!important;word-wrap:break-word}}@media (prefers-reduced-motion:no-preference) and (min-width:1025px) and (hover:hover) and (pointer:fine){.js-split-animation .word,[data-split-animation] .word{display:inline-block;max-width:none!important;opacity:0;position:relative;translate:translateY(20%);width:auto!important;will-change:opacity,transform}}html.is-animating,html.is-loading{cursor:progress}
+      .c-preloader[data-cid] {
+        align-items: center;
+        background: #301911;
+        bottom: 0;
+        display: flex;
+        height: 100%;
+        height: 100dvh;
+        height: calc(var(--vh) * 100);
+        justify-content: center;
+        left: 0;
+        opacity: 1;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        top: 0;
+        transition-delay: 0s;
+        transition-duration: 0.8s;
+        transition-property: clip-path, opacity, visibility;
+        transition-timing-function: cubic-bezier(0.78, 0, 0.22, 1);
+        visibility: visible;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .c-preloader[data-cid] .preloader_logo {
+        aspect-ratio: 400/293;
+        margin: auto;
+        max-width: 200px;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      .c-preloader[data-cid] .logo_src {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      @media (min-width: 769px) {
+        .c-preloader[data-cid] .preloader_logo {
+          max-width: 400px;
+        }
+      }
+
+      @supports (clip-path: polygon(0 0)) {
+        .c-preloader[data-cid] {
+          clip-path: polygon(
+            0 0,
+            0 100%,
+            50% 100%,
+            50% 50%,
+            50% 50%,
+            50% 50%,
+            50% 50%,
+            50% 100%,
+            100% 100%,
+            100% 0
+          );
+          pointer-events: none;
+        }
+      }
+
+      .c-preloader[data-cid].is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      @supports (clip-path: polygon(0 0)) {
+        .c-preloader[data-cid].is-hidden {
+          clip-path: polygon(
+            0 0,
+            0 100%,
+            0 100%,
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%,
+            0 100%,
+            100% 100%,
+            100% 0
+          );
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .js-split-animation,
+      [data-split-animation] {
+        max-width: none !important;
+        word-wrap: break-word;
+      }
+
+      .js-split-animation > p,
+      [data-split-animation] > p {
+        max-width: none !important;
+        word-wrap: break-word;
+      }
+
+      @media (prefers-reduced-motion: no-preference) and (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+        .js-split-animation .word,
+        [data-split-animation] .word {
+          display: inline-block;
+          max-width: none !important;
+          opacity: 0;
+          position: relative;
+          transform: translateY(20%);
+          width: auto !important;
+          will-change: opacity, transform;
+        }
+      }
+
+      html.is-animating,
+      html.is-loading {
+        cursor: progress;
+      }
     </style>
     <script>
       document.documentElement.className =
@@ -1072,6 +1246,13 @@
     />
     <link
       rel="stylesheet"
+      id="responsive-enhancements-css"
+      href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/responsive-enhancements.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
       id="app-css"
       href="./Eight80 - 880 Atlantic Avenue Brooklyn, NY 11238_files/app.css"
       type="text/css"
@@ -1088,6 +1269,39 @@
       /* Scroll Header Styles */
       body.is-header-scrolled .c-header[data-cid] {
         --inline-background-color: rgba(var(--rgb--2), 0.95);
+      }
+
+      /* On the hero: show navbar buttons, hide only the navbar logo */
+      body[data-hero-gone="false"] .c-header[data-cid] .header_inline {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+      }
+      body[data-hero-gone="false"] .c-header[data-cid] .inline_logo {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      /* Once hero is gone: reveal navbar logo regardless of scroll class */
+      body[data-hero-gone="true"] .inline_logo .logo_anchor {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero logo scales down on scroll */
+      .block-hero.-type--logo h1.logo {
+        transform-origin: center top;
+        transform: translate3d(
+            var(--hero-logo-translate-x, 0px),
+            var(--hero-logo-translate-y, 0px),
+            0
+          )
+          scale(var(--hero-logo-scale, 1));
+        opacity: var(--hero-logo-opacity, 1);
+        will-change: transform, opacity;
+        position: relative;
+        z-index: 30;
       }
 
       .inline_logo .logo_anchor {
@@ -1500,6 +1714,7 @@
     bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZGlzYWJsZWQiLCJDT05GSUciOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMi4wLjM1Iiwic2NvcmUiOjIwMDM1fV0="
     data-scrolling-direction="up"
     data-scrolling-started="false"
+    data-hero-gone="false"
   >
     <section
       data-duration="800"
@@ -1721,11 +1936,7 @@
         <div class="modal_scroll" data-lenis-prevent="" bis_skin_checked="1">
           <div class="modal_content" bis_skin_checked="1">
             <hgroup class="head">
-              <div
-                class="head_title u-wysiwyg-text--1"
-                style=""
-                bis_skin_checked="1"
-              >
+              <div class="head_title u-wysiwyg-text--1" bis_skin_checked="1">
                 PLEASE PROVIDE YOUR<br />
                 NAME AND EMAIL
               </div>
@@ -2125,16 +2336,11 @@
                   <div class="content_label" bis_skin_checked="1">
                     Capabilities
                   </div>
-                  <div
-                    class="content_heading u-wysiwyg-text--1"
-                    style=""
-                    bis_skin_checked="1"
-                  >
+                  <div class="content_heading u-wysiwyg-text--1" bis_skin_checked="1">
                     Creative<br />Technology<br />Studio
                   </div>
                   <div
                     class="content_text u-wysiwyg-text--1 u-wysiwyg-lists--1"
-                    style=""
                     bis_skin_checked="1"
                   >
                     From concept through launch, we design and build rich
@@ -2620,16 +2826,11 @@
             class="block_inner u-container u-container--1 u-container--pad"
             bis_skin_checked="1"
           >
-            <div
-              class="heading u-wysiwyg-text--1"
-              style=""
-              bis_skin_checked="1"
-            >
+            <div class="heading u-wysiwyg-text--1" bis_skin_checked="1">
               Brooklyn
               <div class="content" bis_skin_checked="1">
                 <div
                   class="text u-wysiwyg-text--1 u-wysiwyg-lists--1"
-                  style=""
                   bis_skin_checked="1"
                 >
                   With a vibrant mix of cafés, boutiques, and cultural
@@ -2676,7 +2877,6 @@
             <div class="content" bis_skin_checked="1">
               <div
                 class="text u-wysiwyg-text--1 u-wysiwyg-lists--1"
-                style=""
                 bis_skin_checked="1"
               >
                 With a vibrant mix of cafés, boutiques, and cultural
@@ -3077,13 +3277,134 @@
         "use strict";
 
         const SCROLL_THRESHOLD = 50; // pixels before triggering the scroll effect
+        const HERO_GONE_PROGRESS = 0.75; // 0..1 (e.g. 0.75 = nav appears earlier, 0.95 = later)
+
+        function clamp01(value) {
+          return Math.min(1, Math.max(0, value));
+        }
+
+        function lerp(a, b, t) {
+          return a + (b - a) * t;
+        }
+
+        function smoothstep(edge0, edge1, x) {
+          const t = clamp01((x - edge0) / (edge1 - edge0));
+          return t * t * (3 - 2 * t);
+        }
 
         function initScrollHeader() {
           const header = document.querySelector(".c-header[data-cid]");
-          if (!header) return;
+          const heroLogo = document.querySelector(
+            ".block-hero.-type--logo h1.logo"
+          );
+          const heroSection = document.querySelector('section[data-cid="hero"]');
+          const navLogoAnchor = document.querySelector(
+            '.c-header[data-cid] .inline_logo .logo_anchor'
+          );
+
+          let baseHeroLogoSize = null;
+          function captureBaseHeroLogoSize() {
+            if (!heroLogo) return;
+            // Use layout size so transforms (scale/translate) don't affect our baseline.
+            const width = heroLogo.offsetWidth;
+            const height = heroLogo.offsetHeight;
+            if (width > 0 && height > 0) {
+              baseHeroLogoSize = { width, height };
+              return;
+            }
+
+            // Fallback if layout sizing isn't available.
+            const rect = heroLogo.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+              baseHeroLogoSize = { width: rect.width, height: rect.height };
+            }
+          }
+
+          let heroGone = false;
+          document.body.setAttribute("data-hero-gone", "false");
 
           function updateHeaderOnScroll() {
             const scrollY = window.scrollY || window.pageYOffset;
+
+            // Compute a 0..1 progress while hero scrolls away
+            let heroProgress = 0;
+            if (heroSection) {
+              const heroRect = heroSection.getBoundingClientRect();
+              const heroHeight = Math.max(1, heroRect.height);
+              // At the very top of the page, heroRect.top is ~0 so progress stays 0.
+              // As you scroll down, heroRect.top becomes negative and progress increases.
+              heroProgress = clamp01((-heroRect.top) / heroHeight);
+
+              const nextHeroGone = heroProgress >= HERO_GONE_PROGRESS;
+              if (nextHeroGone !== heroGone) {
+                heroGone = nextHeroGone;
+                document.body.setAttribute(
+                  "data-hero-gone",
+                  heroGone ? "true" : "false"
+                );
+              }
+            }
+
+            if (heroLogo) {
+              if (!baseHeroLogoSize) captureBaseHeroLogoSize();
+
+              let targetScale = 0.45;
+              if (baseHeroLogoSize && navLogoAnchor) {
+                const navRect = navLogoAnchor.getBoundingClientRect();
+                if (navRect.height > 0 && baseHeroLogoSize.height > 0) {
+                  targetScale = clamp01(navRect.height / baseHeroLogoSize.height);
+                  targetScale = Math.max(0.25, Math.min(0.9, targetScale));
+                }
+              }
+
+              const scale = lerp(1, targetScale, heroProgress);
+              heroLogo.style.setProperty("--hero-logo-scale", scale.toFixed(3));
+
+              // Move hero logo toward the navbar logo position for a smooth transition
+              if (navLogoAnchor) {
+                const heroRect = heroLogo.getBoundingClientRect();
+                const navRect = navLogoAnchor.getBoundingClientRect();
+                const heroCenterX = heroRect.left + heroRect.width / 2;
+                const heroCenterY = heroRect.top + heroRect.height / 2;
+                const navCenterX = navRect.left + navRect.width / 2;
+                const navCenterY = navRect.top + navRect.height / 2;
+
+                const dx = navCenterX - heroCenterX;
+                const dy = navCenterY - heroCenterY;
+
+                // Add a "downward" arc while scrolling for a smoother perceived motion,
+                // but ease it out near the end so the logo still lands on the navbar.
+                const ARC_DOWN_PX = 600;
+                const arcIn = smoothstep(0.0, 0.6, heroProgress);
+                const arcOut = smoothstep(0.6, 1.0, heroProgress);
+                const arc = arcIn * (1 - arcOut);
+                const arcDown = ARC_DOWN_PX * arc;
+
+                heroLogo.style.setProperty(
+                  "--hero-logo-translate-x",
+                  `${(dx * heroProgress).toFixed(2)}px`
+                );
+                heroLogo.style.setProperty(
+                  "--hero-logo-translate-y",
+                  `${(dy * heroProgress + arcDown).toFixed(2)}px`
+                );
+              } else {
+                heroLogo.style.setProperty("--hero-logo-translate-x", "0px");
+                heroLogo.style.setProperty("--hero-logo-translate-y", "0px");
+              }
+
+              // Fade out the hero logo near the end so the nav logo can take over cleanly
+              const fade = smoothstep(0.85, 1, heroProgress);
+              const opacity = heroGone ? 0 : (1 - fade);
+              heroLogo.style.setProperty("--hero-logo-opacity", String(opacity));
+            }
+
+            // Only reveal nav once the hero has fully scrolled away
+            if (!heroGone) {
+              document.body.setAttribute("data-scrolling-started", "false");
+              document.body.classList.remove("is-header-scrolled");
+              return;
+            }
 
             if (scrollY > SCROLL_THRESHOLD) {
               document.body.setAttribute("data-scrolling-started", "true");
@@ -3093,6 +3414,18 @@
               document.body.classList.remove("is-header-scrolled");
             }
           }
+
+          // No IntersectionObserver required: hero-gone state is computed on scroll.
+
+          window.addEventListener(
+            "resize",
+            throttle(() => {
+              baseHeroLogoSize = null;
+              captureBaseHeroLogoSize();
+              updateHeaderOnScroll();
+            }, 100),
+            { passive: true }
+          );
 
           // Use throttled scroll listener for better performance
           window.addEventListener(

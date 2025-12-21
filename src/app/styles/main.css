@@ -1,0 +1,61 @@
+/* Main stylesheet - brand overrides and utilities */
+/* Note: CSS files are imported directly in layout.tsx for Next.js compatibility */
+
+/* Brand overrides */
+:root {
+  --color--1: #1c3857; /* Slate Blue */
+  --color--2: #ffffff; /* White */
+  --color--3: #708238; /* Olive Green */
+  --color--4: #c8a25f; /* Muted Gold */
+  --rgb--1: 28, 56, 87;
+  --rgb--2: 255, 255, 255;
+  --rgb--3: 112, 130, 56;
+  --rgb--4: 200, 162, 95;
+  --family--1: 'Playfair Display', serif;
+  --family--2: 'PT Serif', serif;
+  --family--3: 'Open Sans', sans-serif;
+}
+
+/* Scroll Header Styles */
+body.is-header-scrolled .c-header[data-cid] {
+  --inline-background-color: rgba(var(--rgb--2), 0.95);
+}
+
+body[data-hero-gone="false"] .c-header[data-cid] .header_inline {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+body[data-hero-gone="false"] .c-header[data-cid] .inline_logo {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Utility classes */
+.u-absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.u-cover-object {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.u-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.u-container--pad {
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+}

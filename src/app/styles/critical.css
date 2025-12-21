@@ -1,0 +1,126 @@
+/* Critical CSS - Loaded first for optimal performance */
+
+.c-preloader[data-cid] {
+  align-items: center;
+  background: #301911;
+  bottom: 0;
+  display: flex;
+  height: 100%;
+  height: 100dvh;
+  height: calc(var(--vh) * 100);
+  justify-content: center;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transition-delay: 0s;
+  transition-duration: 0.8s;
+  transition-property: clip-path, opacity, visibility;
+  transition-timing-function: cubic-bezier(0.78, 0, 0.22, 1);
+  visibility: visible;
+  width: 100%;
+  z-index: 100;
+}
+
+.c-preloader[data-cid] .preloader_logo {
+  aspect-ratio: 400/293;
+  margin: auto;
+  max-width: 200px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.c-preloader[data-cid] .logo_src {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .c-preloader[data-cid] .preloader_logo {
+    max-width: 400px;
+  }
+}
+
+@supports (clip-path: polygon(0 0)) {
+  .c-preloader[data-cid] {
+    clip-path: polygon(
+      0 0,
+      0 100%,
+      50% 100%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 100%,
+      100% 100%,
+      100% 0
+    );
+    pointer-events: none;
+  }
+}
+
+.c-preloader[data-cid].is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@supports (clip-path: polygon(0 0)) {
+  .c-preloader[data-cid].is-hidden {
+    clip-path: polygon(
+      0 0,
+      0 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 100%,
+      100% 100%,
+      100% 0
+    );
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.js-split-animation,
+[data-split-animation] {
+  max-width: none !important;
+  word-wrap: break-word;
+}
+
+.js-split-animation > p,
+[data-split-animation] > p {
+  max-width: none !important;
+  word-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+  .js-split-animation .word,
+  [data-split-animation] .word {
+    display: inline-block;
+    max-width: none !important;
+    opacity: 0;
+    position: relative;
+    transform: translateY(20%);
+    width: auto !important;
+    will-change: opacity, transform;
+  }
+}
+
+html.is-animating,
+html.is-loading {
+  cursor: progress;
+}
+
+img:is([sizes="auto" i], [sizes^="auto," i]) {
+  contain-intrinsic-size: 3000px 1500px;
+}
